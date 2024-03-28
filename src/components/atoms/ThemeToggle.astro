@@ -1,0 +1,44 @@
+---
+
+---
+
+<>
+  <script>
+    const themes = ["light", "dark"];
+    let preferredTheme = window.localStorage.getItem("theme");
+
+    if (preferredTheme !== null) {
+      console.log("preferredTheme", preferredTheme);
+      document.documentElement.classList.remove(...themes);
+      document.documentElement.classList.add(preferredTheme);
+
+      if (preferredTheme === themes[1]) {
+        document.getElementById("toggle-theme")?.setAttribute("checked", "true");
+      }
+    }
+
+    function isDarkTheme() {
+      return document.documentElement.classList.contains("dark");
+    }
+
+    function togglePreference() {
+      const newTheme = isDarkTheme() ? themes[0] : themes[1];
+      document.documentElement.classList.remove(...themes);
+      document.documentElement.classList.add(newTheme);
+      window.localStorage.setItem("theme", newTheme);
+    }
+
+    document.getElementById("toggle-theme")?.addEventListener("change", togglePreference);
+  </script>
+  <button id="toggle-theme">
+   
+
+  </button>
+</>
+
+<style>
+    button{
+        position: fixed;
+        bottom: 20px;
+    }
+</style>

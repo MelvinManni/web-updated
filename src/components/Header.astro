@@ -1,11 +1,12 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import Button from "./atoms/Button.astro";
-import { SITE_TITLE } from "../consts";
+// import { SITE_TITLE } from "../consts";
+import ArrowRightIcon from "./SVG/ArrowRightIcon.astro";
 ---
 
-<header class="px-40 py-10" >
-  <nav class="flex justify-between items items-center " >
+<header class="px-40 py-10">
+  <nav class="flex justify-between items items-center">
     <div class="flex gap-10">
       <a href="/">
         <img class="hidden dark:block w-24" src="/images/branding/logo-light.svg" alt="" />
@@ -17,8 +18,9 @@ import { SITE_TITLE } from "../consts";
         <HeaderLink href="/about">About</HeaderLink>
       </div>
     </div>
+
     <div>
-      <Button>Contact</Button>
+      <Button>Get Started! <ArrowRightIcon class="ml-2" /> </Button>
     </div>
   </nav>
 </header>
