@@ -87,15 +87,15 @@ import SunIcon from "../SVG/SunIcon.astro";
   <button
     id="draggable"
     class:list={[
-      "border border-dark-100/50 rounded-full px-3 py-3 w-24 h-[50px] flex gap-5 relative items-center group light cursor-grab active:cursor-grabbing",
+      "border border-dark-100/50 rounded-full px-3 py-3 w-24 h-[50px] flex gap-5 relative items-center group light cursor-grab active:cursor-grabbing bg-page",
     ]}
   >
     <div
       class="h-full w-12 border border-dark-100/50 absolute rounded-full border-l-0 dark:border-l dark:border-r-0 dark:-right-0 dark:left-auto -left-0"
     >
     </div>
-    <SunIcon class:list={["w-6 h-6  stroke-yellow-500 dark:stroke-gray-800 transition toggle-theme"]} />
-    <MoonIcon class:list={["w-6 h-6 dark:stroke-light-700 stroke-slate-200 transition toggle-theme"]} />
+    <SunIcon class:list={["w-6 h-6  stroke-yellow-500 dark:stroke-gray-600 transition toggle-theme"]} />
+    <MoonIcon class:list={["w-6 h-6 dark:stroke-light-700 stroke-slate-300 transition toggle-theme"]} />
   </button>
 </div>
 
