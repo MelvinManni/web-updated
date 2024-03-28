@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: "class",
   theme: {
     extend: {
       boxShadow: {
@@ -13,6 +14,9 @@ export default {
         gotham: ["Gotham", "sans-serif"],
         "dm-sans": ["DM Sans", "sans-serif"],
         inter: ["Inter", "sans-serif"],
+      },
+      backgroundColor:{
+        page: "var(--background)"
       },
       backgroundImage: {
         button: "linear-gradient(88deg, #FF44EC 23.87%, #4309E4 145.85%)",

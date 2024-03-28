@@ -3,34 +3,21 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 @import url(./font.css);
 
-:root {
-  --accent: #2337ff;
-  --accent-dark: #000d8a;
-  --black: 15, 18, 25;
-  --gray: 96, 115, 159;
-  --gray-light: 229, 233, 240;
-  --gray-dark: 34, 41, 57;
-  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
-  --box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
+@layer base {
+  :root {
+    --background: #f5f7f9;
+    --text: #080808;
+  }
+  .dark {
+    --background: #141414;
+    --text: #fff;
+  }
 }
-@font-face {
-  font-family: "Atkinson";
-  src: url("/fonts/atkinson-regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Atkinson";
-  src: url("/fonts/atkinson-bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+
+* {
+  transition: 0.15s ease all;
 }
 
 body {
@@ -41,6 +28,8 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.7;
+  background-color: var(--background);
+  color: var(--text);
 }
 main {
   width: 720px;
