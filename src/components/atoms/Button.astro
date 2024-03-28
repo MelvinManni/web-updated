@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"button"> & {
+  variant?: "primary" | "secondary";
+};
+
+const { class: className, ...props } = Astro.props;
+
+const variant = {
+  primary: "bg-button text-white",
+  secondary: "bg-gray-500 text-white",
+};
+---
+
+<button
+  class:list={[variant[props.variant ?? "primary"], "font-inter font-semibold px-6 py-4 rounded-lg leading-none", className]}
+  {...props}
+>
+  <slot /></button
+>
+
+<style>
+  button {
+    font-size: 16px;
+  }
+</style>
