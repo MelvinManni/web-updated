@@ -35,23 +35,14 @@ import SunIcon from "../SVG/SunIcon.astro";
     }
 
     const draggableDiv = document.getElementById("draggable");
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
 
     let isDragging = false; // Flag to track dragging state
-
-    // Set the initial position of the draggable div
-    const initialTop = window.localStorage.getItem("draggableDivTop") || "0px";
-    const initialLeft = window.localStorage.getItem("draggableDivLeft") || "0px";
-
-    if (draggableDiv && initialTop && initialLeft) {
-      draggableDiv.style.top = initialTop;
-      draggableDiv.style.left = initialLeft;
-    }
 
     draggableDiv?.addEventListener("mousedown", (event) => {
       event.preventDefault();
       isDragging = true;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
 
       const initialX = event.clientX;
       const initialY = event.clientY;
@@ -81,6 +72,38 @@ import SunIcon from "../SVG/SunIcon.astro";
         window.removeEventListener("mousemove", () => {});
       });
     });
+    function adjustDivToBottomRight() {
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const initialTop: string = window.localStorage.getItem("draggableDivTop") ?? "0px";
+      const initialLeft: string = window.localStorage.getItem("draggableDivLeft") ?? "0px";
+
+      if (draggableDiv && initialTop && initialLeft) {
+        const iTop = Number(initialTop.substring(0, initialTop.length - 2));
+        const iLeft = Number(initialLeft.substring(0, initialLeft.length - 2));
+        if (iLeft > windowWidth || iTop > windowHeight) {
+          if (draggableDiv !== null) {
+            const divWidth = draggableDiv.offsetWidth;
+            const divHeight = draggableDiv.offsetHeight;
+
+            // Calculate bottom and right positions for bottom right corner placement
+            const bottomPosition = windowHeight - divHeight;
+            const rightPosition = windowWidth - divWidth;
+
+            // Apply styles to the div
+            draggableDiv.style.top = `${bottomPosition}px`;
+            draggableDiv.style.left = `${rightPosition}px`;
+          }
+        } else {
+          draggableDiv.style.top = initialTop;
+          draggableDiv.style.left = initialLeft;
+        }
+      }
+    }
+
+    // Call the function on initial load and window resize event
+    window.addEventListener("onload", adjustDivToBottomRight);
+    window.addEventListener("resize", adjustDivToBottomRight);
     document.getElementsByClassName("toggle-theme")[0].addEventListener("click", togglePreference);
     document.getElementsByClassName("toggle-theme")[1].addEventListener("click", togglePreference);
   </script>
