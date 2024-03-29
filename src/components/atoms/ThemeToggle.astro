@@ -4,109 +4,6 @@ import SunIcon from "../SVG/SunIcon.astro";
 ---
 
 <div>
-  <script>
-    const themes = ["light", "dark"];
-    let preferredTheme = window.localStorage.getItem("theme");
-
-    if (preferredTheme !== null) {
-      console.log("preferredTheme", preferredTheme);
-      document.documentElement.classList.remove(...themes);
-      document.documentElement.classList.add(preferredTheme);
-
-      if (preferredTheme === themes[1]) {
-        document.getElementById("toggle-theme")?.setAttribute("checked", "true");
-        document.getElementById("toggle-theme")?.classList.remove(...themes);
-        document.getElementById("toggle-theme")?.classList.add(preferredTheme);
-      }
-    }
-
-    function isDarkTheme() {
-      return document.documentElement.classList.contains("dark");
-    }
-
-    function togglePreference() {
-      console.log("Hi");
-      const newTheme = isDarkTheme() ? themes[0] : themes[1];
-      document.documentElement.classList.remove(...themes);
-      document.documentElement.classList.add(newTheme);
-      document.getElementById("toggle-theme")?.classList.remove(...themes);
-      document.getElementById("toggle-theme")?.classList.add(newTheme);
-      window.localStorage.setItem("theme", newTheme);
-    }
-
-    const draggableDiv = document.getElementById("draggable");
-
-    let isDragging = false; // Flag to track dragging state
-
-    draggableDiv?.addEventListener("mousedown", (event) => {
-      event.preventDefault();
-      isDragging = true;
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
-
-      const initialX = event.clientX;
-      const initialY = event.clientY;
-      const initialTop = draggableDiv.offsetTop;
-      const initialLeft = draggableDiv.offsetLeft;
-
-      window.addEventListener("mousemove", (moveEvent) => {
-        if (isDragging) {
-          let newTop = initialTop + moveEvent.clientY - initialY;
-          let newLeft = initialLeft + moveEvent.clientX - initialX;
-
-          // Limit movement within screen boundaries
-          newTop = Math.max(0, Math.min(newTop, windowHeight - draggableDiv.offsetHeight));
-          newLeft = Math.max(0, Math.min(newLeft, windowWidth - draggableDiv.offsetWidth));
-
-          draggableDiv.style.top = `${newTop}px`;
-          draggableDiv.style.left = `${newLeft}px`;
-
-          // save the new position to localstorage
-          window.localStorage.setItem("draggableDivTop", `${newTop}px`);
-          window.localStorage.setItem("draggableDivLeft", `${newLeft}px`);
-        }
-      });
-
-      window.addEventListener("mouseup", () => {
-        isDragging = false;
-        window.removeEventListener("mousemove", () => {});
-      });
-    });
-    function adjustDivToBottomRight() {
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
-      const initialTop: string = window.localStorage.getItem("draggableDivTop") ?? "0px";
-      const initialLeft: string = window.localStorage.getItem("draggableDivLeft") ?? "0px";
-
-      if (draggableDiv && initialTop && initialLeft) {
-        const iTop = Number(initialTop.substring(0, initialTop.length - 2));
-        const iLeft = Number(initialLeft.substring(0, initialLeft.length - 2));
-        if (iLeft > windowWidth || iTop > windowHeight) {
-          if (draggableDiv !== null) {
-            const divWidth = draggableDiv.offsetWidth;
-            const divHeight = draggableDiv.offsetHeight;
-
-            // Calculate bottom and right positions for bottom right corner placement
-            const bottomPosition = windowHeight - divHeight;
-            const rightPosition = windowWidth - divWidth;
-
-            // Apply styles to the div
-            draggableDiv.style.top = `${bottomPosition}px`;
-            draggableDiv.style.left = `${rightPosition}px`;
-          }
-        } else {
-          draggableDiv.style.top = initialTop;
-          draggableDiv.style.left = initialLeft;
-        }
-      }
-    }
-
-    // Call the function on initial load and window resize event
-    window.addEventListener("onload", adjustDivToBottomRight);
-    window.addEventListener("resize", adjustDivToBottomRight);
-    document.getElementsByClassName("toggle-theme")[0].addEventListener("click", togglePreference);
-    document.getElementsByClassName("toggle-theme")[1].addEventListener("click", togglePreference);
-  </script>
   <button
     id="draggable"
     class:list={[
@@ -121,7 +18,146 @@ import SunIcon from "../SVG/SunIcon.astro";
     <MoonIcon class:list={["w-6 h-6 dark:stroke-light-700 stroke-slate-300 transition toggle-theme"]} />
   </button>
 </div>
+<script>
+  const themes = ["light", "dark"];
+  let preferredTheme = window.localStorage.getItem("theme");
 
+  if (preferredTheme !== null) {
+    console.log("preferredTheme", preferredTheme);
+    document.documentElement.classList.remove(...themes);
+    document.documentElement.classList.add(preferredTheme);
+
+    if (preferredTheme === themes[1]) {
+      document.getElementById("toggle-theme")?.setAttribute("checked", "true");
+      document.getElementById("toggle-theme")?.classList.remove(...themes);
+      document.getElementById("toggle-theme")?.classList.add(preferredTheme);
+    }
+  }
+
+  function isDarkTheme() {
+    return document.documentElement.classList.contains("dark");
+  }
+
+  function togglePreference() {
+    console.log("Hi");
+    const newTheme = isDarkTheme() ? themes[0] : themes[1];
+    document.documentElement.classList.remove(...themes);
+    document.documentElement.classList.add(newTheme);
+    document.getElementById("toggle-theme")?.classList.remove(...themes);
+    document.getElementById("toggle-theme")?.classList.add(newTheme);
+    window.localStorage.setItem("theme", newTheme);
+  }
+
+  const draggableDiv = document.getElementById("draggable");
+
+  let isDragging = false; // Flag to track dragging state
+
+  draggableDiv?.addEventListener("mousedown", (event) => {
+    event.preventDefault();
+    isDragging = true;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const initialX = event.clientX;
+    const initialY = event.clientY;
+    const initialTop = draggableDiv.offsetTop;
+    const initialLeft = draggableDiv.offsetLeft;
+
+    window.addEventListener("mousemove", (moveEvent) => {
+      if (isDragging) {
+        let newTop = initialTop + moveEvent.clientY - initialY;
+        let newLeft = initialLeft + moveEvent.clientX - initialX;
+
+        // Limit movement within screen boundaries
+        newTop = Math.max(0, Math.min(newTop, windowHeight - draggableDiv.offsetHeight));
+        newLeft = Math.max(0, Math.min(newLeft, windowWidth - draggableDiv.offsetWidth));
+
+        draggableDiv.style.top = `${newTop}px`;
+        draggableDiv.style.left = `${newLeft}px`;
+
+        // save the new position to localstorage
+        window.localStorage.setItem("draggableDivTop", `${newTop}px`);
+        window.localStorage.setItem("draggableDivLeft", `${newLeft}px`);
+      }
+    });
+
+    window.addEventListener("mouseup", () => {
+      isDragging = false;
+      window.removeEventListener("mousemove", () => {});
+    });
+  });
+
+  draggableDiv?.addEventListener("touchstart", (event) => {
+    event.preventDefault();
+    isDragging = true;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const initialX = event.touches[0].clientX;
+    const initialY = event.touches[0].clientY;
+    const initialTop = draggableDiv.offsetTop;
+    const initialLeft = draggableDiv.offsetLeft;
+
+    draggableDiv?.addEventListener("touchmove", (moveEvent) => {
+      if (isDragging) {
+        let newTop = initialTop + moveEvent.touches[0].clientY - initialY;
+        let newLeft = initialLeft + moveEvent.touches[0].clientX - initialX;
+
+        // Limit movement within screen boundaries
+        newTop = Math.max(0, Math.min(newTop, windowHeight - draggableDiv.offsetHeight));
+        newLeft = Math.max(0, Math.min(newLeft, windowWidth - draggableDiv.offsetWidth));
+
+        draggableDiv.style.top = `${newTop}px`;
+        draggableDiv.style.left = `${newLeft}px`;
+
+        // save the new position to localstorage
+        window.localStorage.setItem("draggableDivTop", `${newTop}px`);
+        window.localStorage.setItem("draggableDivLeft", `${newLeft}px`);
+      }
+    });
+
+    window.addEventListener("mouseup", () => {
+      isDragging = false;
+      window.removeEventListener("mousemove", () => {});
+    });
+  });
+
+  function adjustDivToBottomRight() {
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const initialTop: string = window.localStorage.getItem("draggableDivTop") ?? "0px";
+    const initialLeft: string = window.localStorage.getItem("draggableDivLeft") ?? "0px";
+
+    if (draggableDiv && initialTop && initialLeft) {
+      const iTop = Number(initialTop.substring(0, initialTop.length - 2));
+      const iLeft = Number(initialLeft.substring(0, initialLeft.length - 2));
+      if (iLeft > windowWidth || iTop > windowHeight) {
+        if (draggableDiv !== null) {
+          const divWidth = draggableDiv.offsetWidth;
+          const divHeight = draggableDiv.offsetHeight;
+
+          // Calculate bottom and right positions for bottom right corner placement
+          const bottomPosition = windowHeight - divHeight;
+          const rightPosition = windowWidth - divWidth;
+
+          // Apply styles to the div
+          draggableDiv.style.top = `${bottomPosition}px`;
+          draggableDiv.style.left = `${rightPosition}px`;
+        }
+      } else {
+        draggableDiv.style.top = initialTop;
+        draggableDiv.style.left = initialLeft;
+      }
+    }
+  }
+
+  // Call the function on initial load and window resize event
+  adjustDivToBottomRight();
+  window.addEventListener("onload", adjustDivToBottomRight);
+  window.addEventListener("resize", adjustDivToBottomRight);
+  document.getElementsByClassName("toggle-theme")[0].addEventListener("click", togglePreference);
+  document.getElementsByClassName("toggle-theme")[1].addEventListener("click", togglePreference);
+</script>
 <style>
   * {
     transition: 0s;
