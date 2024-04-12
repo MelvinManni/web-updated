@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"svg">;
+
+const { ...props } = Astro.props;
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 49 49" fill="none" {...props}>
+  <path
+    d="M32.6667 16.3333V32.6666M24.5 22.4583V32.6666M16.3333 28.5833V32.6666M12.25 40.8333H36.75C39.0052 40.8333 40.8333 39.0051 40.8333 36.75V12.25C40.8333 9.9948 39.0052 8.16663 36.75 8.16663H12.25C9.99483 8.16663 8.16666 9.9948 8.16666 12.25V36.75C8.16666 39.0051 9.99483 40.8333 12.25 40.8333Z"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+</svg>
+
+<style></style>
