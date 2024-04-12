@@ -9,6 +9,8 @@ import CubeIcon from "../components/SVG/CubeIcon.astro";
 import ChipIcon from "../components/SVG/ChipIcon.astro";
 import EmojiHappyIcon from "../components/SVG/EmojiHappyIcon.astro";
 import LogoWhite from "../components/SVG/LogoWhite.astro";
+import ArrowRightIcon from "../components/SVG/ArrowRightIcon.astro";
+import Button from "../components/atoms/Button.astro";
 ---
 
 <Layout>
@@ -144,12 +146,14 @@ import LogoWhite from "../components/SVG/LogoWhite.astro";
       <div class="grid sm:grid-cols-2 gap-10">
         <div class="flex flex-col gap-8">
           <h2 class="text-5xl font-bold clip-text bg-logo font-gotham">About CR3ST</h2>
-          <p class="dark:text-dark-50 text-dark-600">
+          <p class="dark:text-dark-50 text-dark-600 font-jarkata">
             At CR3ST, innovation is at the heart of everything we do. With a passion for excellence and a dedication to
             our clients' success, we bring together a team of experts from diverse backgrounds to deliver cutting-edge
             solutions that drive tangible results.
           </p>
+          <Button class="w-fit">Get Started! <ArrowRightIcon class="ml-2" /> </Button>
         </div>
+        
       </div>
     </Container>
   </section>
