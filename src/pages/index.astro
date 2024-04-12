@@ -1,5 +1,18 @@
 ---
-import Layout from '../layouts/index.astro'
+import HeroBg from "../components/SVG/HeroBg.astro";
+import HeroBgDark from "../components/SVG/HeroBgDark.astro";
+import Container from "../components/atoms/Container.astro";
+import Layout from "../layouts/index.astro";
 ---
 
-<Layout></Layout>
+<Layout>
+  <section class="min-h-screen relative">
+    <HeroBg class="absolute h-full w-full dark:hidden" />
+    <HeroBgDark class="absolute -top-[20%] h-full w-full hidden dark:block" />
+    <Container class="relative z-10">
+      <div class="flex justify-center py-40">
+        <img src="/images/branding/icon.svg" alt="Logo" class="md:w-64" />
+      </div>
+    </Container>
+  </section>
+</Layout>

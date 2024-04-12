@@ -20,6 +20,7 @@ export default {
       },
       backgroundImage: {
         button: "var(--button-background)",
+        logo: "linear-gradient(84deg, #2A04E5 -1.66%, #FF38D7 43.95%, #FFBC7B 88.88%)",
       },
 
       colors: {
@@ -89,7 +90,6 @@ export default {
         "light-bg": "#F5F7F9",
       },
     },
-    
   },
   classAttributes: ["class", "className", "ngClass", "class:list"],
   experimental: {

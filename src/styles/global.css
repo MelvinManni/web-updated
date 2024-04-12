@@ -33,12 +33,7 @@ body {
   background-color: var(--background);
   color: var(--text);
 }
-main {
-  width: 720px;
-  max-width: calc(100% - 2em);
-  margin: auto;
-  padding: 3em 1em;
-}
+
 h1,
 h2,
 h3,
@@ -142,4 +137,61 @@ hr {
   clip-path: inset(50%);
   /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
   white-space: nowrap;
+}
+
+/* Style Scroll bars */
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #19191b9d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffd36b;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #19191b;
+}
+
+/* Home Screen */
+
+.home-hero {
+  display: relative;
+}
+
+.home-hero::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  right: 40%;
+  width: 274.17px;
+  height: 100%;
+  transform: rotate(67.906deg);
+  background-color: #b5b4ff;
+  filter: blur(100px);
+  z-index: -1;
+}
+
+.home-hero::after {
+  content: "";
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  width: 740.402px;
+  height: 334px;
+  transform: rotate(-116.773deg);
+  border-radius: 740.402px;
+  opacity: 0.3;
+  background: #E0FF79;
+  filter: blur(100px);
+  z-index: -1;
 }

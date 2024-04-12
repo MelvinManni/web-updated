@@ -10,7 +10,7 @@ import CloseIcon from "./SVG/CloseIcon.astro";
 <header class="py-10 px-8">
   <nav class="flex justify-between items-center container mx-auto">
     <div class="flex gap-10 items-center">
-      <a href="/">
+      <a href="/" class=" mr-20">
         <img class="hidden dark:block w-24" src="/images/branding/logo-white.svg" alt="" />
         <img class="dark:hidden w-24" src="/images/branding/logo.svg" alt="" />
       </a>
@@ -18,9 +18,9 @@ import CloseIcon from "./SVG/CloseIcon.astro";
         <button id="btn-close-menu" class="md:hidden absolute right-5 top-5">
           <CloseIcon class="w-11 h-11" />
         </button>
-        <HeaderLink href="/">About</HeaderLink>
-        <HeaderLink href="/about">Project</HeaderLink>
-        <HeaderLink href="/about">Services</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="/project">Project</HeaderLink>
+        <HeaderLink href="/services">Services</HeaderLink>
         <HeaderLink href="/blog">Blog</HeaderLink>
       </div>
     </div>
