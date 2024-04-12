@@ -8,11 +8,10 @@ import ChartIcon from "../components/SVG/ChartIcon.astro";
 import CubeIcon from "../components/SVG/CubeIcon.astro";
 import ChipIcon from "../components/SVG/ChipIcon.astro";
 import EmojiHappyIcon from "../components/SVG/EmojiHappyIcon.astro";
-import LogoWhite from "../components/SVG/LogoWhite.astro";
+import Logo from "../components/SVG/Logo.astro";
 import ArrowRightIcon from "../components/SVG/ArrowRightIcon.astro";
 import Button from "../components/atoms/Button.astro";
 import Carousel from "../components/carousel/Carousel.astro";
-import CarouselItem from "../components/carousel/CarouselItem.astro";
 import TestmonialItem from "../components/TestmonialItem.astro";
 ---
 
@@ -71,9 +70,9 @@ import TestmonialItem from "../components/TestmonialItem.astro";
       </div>
     </Container>
   </section>
-  <section class="bg-[#171717]">
+  <section class="dark:bg-[#171717] bg-light-300">
     <Container class="relative pt-24 pb-32 overflow-hidden">
-      <LogoWhite class="md:w-64 w-36 absolute opacity-10 -right-10 dark:fill-white fill-dark-100" />
+      <Logo class="md:w-64 w-36 absolute opacity-10 -right-4 dark:fill-white fill-secondary" />
       <h2 class="text-5xl font-gotham text-center text-dark-700 dark:text-light-200 relative z-10">
         Custom Solutions, <br /> Tailored for You!
       </h2>
@@ -141,12 +140,12 @@ import TestmonialItem from "../components/TestmonialItem.astro";
           </div>
         </div>
       </div>
-      <LogoWhite class="md:w-64 w-36 absolute opacity-10 -left-32 bottom-40 dark:fill-white fill-dark-100" />
+      <Logo class="md:w-64 w-36 absolute opacity-10 -left-32 bottom-40 dark:fill-white fill-secondary" />
     </Container>
   </section>
   <section>
-    <Container class="pb-32 pt-0">
-      <div class="grid md:grid-cols-2 md:gap-48 items-center">
+    <Container class="pb-32 pt-0 relative overflow-hidden">
+      <div class="grid md:grid-cols-2 md:gap-48 items-center relative z-10">
         <div class="flex flex-col gap-8">
           <h2 class="text-5xl font-bold clip-text bg-logo font-gotham">About CR3ST</h2>
           <p class="dark:text-dark-50 text-dark-600 font-jarkata">
@@ -161,6 +160,7 @@ import TestmonialItem from "../components/TestmonialItem.astro";
           <img src="/images/about-light.png" alt="Cr3st: About us" class="w-full dark:hidden" />
         </div>
       </div>
+      <Logo class="md:w-64 w-36 absolute opacity-10 right-2 -bottom-6 dark:fill-white fill-secondary" />
     </Container>
   </section>
   <section class="" bg-[#171717]>
@@ -169,17 +169,61 @@ import TestmonialItem from "../components/TestmonialItem.astro";
         What Our Clients Say
       </h2>
 
-      <div>
-        <Carousel>
-          <CarouselItem>
-            <TestmonialItem
-              src="/images/testmonial-1.png"
-              message="CR3ST was instrumental in our success. Their attention to detail and commitment to excellence surpassed our expectations."
-              name="Jane Smith"
-              title="CEO XYZ Company"
-            />
-          </CarouselItem>
-        </Carousel>
+      <div class="mt-28">
+        <Carousel
+          items={[
+            {
+              src: "/images/testmonial-1.png",
+              message:
+                "CR3ST was instrumental in our success. Their attention to detail and commitment to excellence surpassed our expectations.",
+              name: "Jane Smith",
+              title: "CEO XYZ Company",
+            },
+
+            {
+              src: "/images/testmonial-2.png",
+              message:
+                "CR3ST understands our vision and consistently delivers innovative solutions. They are a trusted partner we can rely on.",
+              name: "Jane Smith",
+              title: "CEO XYZ Company",
+            },
+
+            {
+              src: "/images/testmonial-1.png",
+              message: "",
+              name: "Jane Smith",
+              title: "CEO XYZ Company",
+            },
+
+            {
+              src: "/images/testmonial-2.png",
+              message: "",
+              name: "Jane Smith",
+              title: "CEO XYZ Company",
+            },
+            {
+              src: "/images/testmonial-1.png",
+              message:
+                "CR3ST was instrumental in our success. Their attention to detail and commitment to excellence surpassed our expectations.",
+              name: "Jane Smith",
+              title: "CEO XYZ Company",
+            },
+
+            {
+              src: "/images/testmonial-2.png",
+              message:
+                "CR3ST understands our vision and consistently delivers innovative solutions. They are a trusted partner we can rely on.",
+              name: "Jane Smith",
+              title: "CEO XYZ Company",
+            },
+            {
+              src: "/images/testmonial-2.png",
+              message: "",
+              name: "Jane Smith",
+              title: "CEO XYZ Company",
+            },
+          ]}
+        />
       </div>
     </Container>
   </section>
