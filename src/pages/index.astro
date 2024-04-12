@@ -11,6 +11,9 @@ import EmojiHappyIcon from "../components/SVG/EmojiHappyIcon.astro";
 import LogoWhite from "../components/SVG/LogoWhite.astro";
 import ArrowRightIcon from "../components/SVG/ArrowRightIcon.astro";
 import Button from "../components/atoms/Button.astro";
+import Carousel from "../components/carousel/Carousel.astro";
+import CarouselItem from "../components/carousel/CarouselItem.astro";
+import TestmonialItem from "../components/TestmonialItem.astro";
 ---
 
 <Layout>
@@ -76,7 +79,7 @@ import Button from "../components/atoms/Button.astro";
       </h2>
 
       <div class="md:w-9/12 mx-auto mt-16 relative z-10">
-        <div class="grid sm:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-8">
           <div class="flex flex-col gap-8">
             <GradientCard>
               <div class="mb-16">
@@ -142,8 +145,8 @@ import Button from "../components/atoms/Button.astro";
     </Container>
   </section>
   <section>
-    <Container class="pb-32 pt-24">
-      <div class="grid sm:grid-cols-2 gap-10">
+    <Container class="pb-32 pt-0">
+      <div class="grid md:grid-cols-2 md:gap-48 items-center">
         <div class="flex flex-col gap-8">
           <h2 class="text-5xl font-bold clip-text bg-logo font-gotham">About CR3ST</h2>
           <p class="dark:text-dark-50 text-dark-600 font-jarkata">
@@ -153,7 +156,30 @@ import Button from "../components/atoms/Button.astro";
           </p>
           <Button class="w-fit">Get Started! <ArrowRightIcon class="ml-2" /> </Button>
         </div>
-        
+        <div>
+          <img src="/images/about-dark.png" alt="Cr3st: About us" class="w-full hidden dark:block" />
+          <img src="/images/about-light.png" alt="Cr3st: About us" class="w-full dark:hidden" />
+        </div>
+      </div>
+    </Container>
+  </section>
+  <section class="" bg-[#171717]>
+    <Container class="pb-32 pt-24">
+      <h2 class="text-4xl font-medium dark:text-light-200 text-dark-600 text-center font-gotham">
+        What Our Clients Say
+      </h2>
+
+      <div>
+        <Carousel>
+          <CarouselItem>
+            <TestmonialItem
+              src="/images/testmonial-1.png"
+              message="CR3ST was instrumental in our success. Their attention to detail and commitment to excellence surpassed our expectations."
+              name="Jane Smith"
+              title="CEO XYZ Company"
+            />
+          </CarouselItem>
+        </Carousel>
       </div>
     </Container>
   </section>

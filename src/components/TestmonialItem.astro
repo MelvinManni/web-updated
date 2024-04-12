@@ -1,0 +1,21 @@
+---
+type Props = {
+  src?: string;
+  message?: string;
+  name?: string;
+  title?: string;
+};
+
+const { src, message, name, title } = Astro.props;
+---
+
+<div>
+  <img src={src} alt={name} class="w-8/12" />
+  <p class="dark:text-white text-xl font-gotham font-light text-dark-700 mt-14 mb-16">&quot;{message}&quot;</p>
+  <div>
+    <p class="dark:text-gray-200 text-xl font-gotham font-medium text-dark-600 mb-1" >{name}</p>
+    <p class="dark:text-gray-400 font-medium text-dark-600" >{title}</p>
+  </div>
+</div>
+
+<style></style>
