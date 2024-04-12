@@ -34,31 +34,6 @@ body {
   color: var(--text);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 0.5rem 0;
-  color: rgb(var(--black));
-  line-height: 1.2;
-}
-h1 {
-  font-size: 3.052em;
-}
-h2 {
-  font-size: 2.441em;
-}
-h3 {
-  font-size: 1.953em;
-}
-h4 {
-  font-size: 1.563em;
-}
-h5 {
-  font-size: 1.25em;
-}
 strong,
 b {
   font-weight: 700;
@@ -69,12 +44,7 @@ a {
 a:hover {
   color: var(--accent);
 }
-p {
-  margin-bottom: 1em;
-}
-.prose p {
-  margin-bottom: 2em;
-}
+
 textarea {
   width: 100%;
   font-size: 16px;
@@ -88,7 +58,6 @@ table {
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
 }
 code {
   padding: 2px 5px;
@@ -137,6 +106,13 @@ hr {
   clip-path: inset(50%);
   /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
   white-space: nowrap;
+}
+
+.clip-text {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 /* Style Scroll bars */
@@ -191,7 +167,7 @@ hr {
   transform: rotate(-116.773deg);
   border-radius: 740.402px;
   opacity: 0.3;
-  background: #E0FF79;
+  background: #e0ff79;
   filter: blur(100px);
   z-index: -1;
 }

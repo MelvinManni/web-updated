@@ -1,11 +1,12 @@
 ---
+import Container from "./atoms/Container.astro";
 import ThemeToggle from "./atoms/ThemeToggle.astro";
 
 const today = new Date();
 ---
 
-<footer class="bg-[#070707] mt-auto py-20 px-8">
-  <div class="container mx-auto">
+<footer class="bg-[#070707] mt-auto py-20">
+  <Container>
     <div class="flex flex-col-reverse justify-center items-center gap-10 lg:grid lg:grid-cols-3">
       <div>
         <img src="/images/branding/logo.svg" alt="cr3st logo" class="w-28" />
@@ -20,7 +21,7 @@ const today = new Date();
         <a href="/privacy-policy" class="text-gray-50 hover:text-white after:bg-gray-600"> Privacy Policy </a>
       </div>
     </div>
-  </div>
+  </Container>
   <ThemeToggle />
 </footer>
 

@@ -6,12 +6,57 @@ import Layout from "../layouts/index.astro";
 ---
 
 <Layout>
-  <section class="min-h-screen relative">
-    <HeroBg class="absolute h-full w-full dark:hidden" />
+  <section class="relative">
+    <HeroBg class="absolute -top-[18%] h-full w-full dark:hidden" />
     <HeroBgDark class="absolute -top-[20%] h-full w-full hidden dark:block" />
     <Container class="relative z-10">
-      <div class="flex justify-center py-40">
-        <img src="/images/branding/icon.svg" alt="Logo" class="md:w-64" />
+      <div class="flex flex-col items-center justify-center py-40">
+        <img src="/images/branding/icon.svg" alt="Logo" class="md:w-64 w-36" />
+
+        <div class="text-center mt-20 font-gotham">
+          <h1 class="text-8xl font-bold text-primary dark:text-white">
+            Welcome to <br />
+            <span class="bg-logo clip-text">CR3ST!</span>
+          </h1>
+          <p class="text-xl font-gotham mt-8 font-light dark:text-white text-dark-400">
+            Transforming Ideas into Reality...
+          </p>
+        </div>
+      </div>
+      <img
+        src="/images/branding/icon-light.svg"
+        alt="Cr3st digital icon"
+        class="absolute w-[300px] bottom-0 right-0 opacity-[0.02] hidden dark:block"
+      />
+    </Container>
+  </section>
+  <section>
+    <Container>
+      <div class="grid grid-cols-4 gap-8">
+        <div class="pb-10 pt-20">
+          <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
+            <h3 class="text-4xl font-bold">10+</h3>
+            <p class="text-lg">Projects</p>
+          </div>
+        </div>
+        <div class="pb-10 pt-20">
+          <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
+            <h3 class="text-4xl font-bold">6+</h3>
+            <p class="text-lg">Happy Clients</p>
+          </div>
+        </div>
+        <div class="pb-10 pt-20">
+          <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
+            <h3 class="text-4xl font-bold">20+</h3>
+            <p class="text-lg">Designs completed</p>
+          </div>
+        </div>
+        <div class="pb-10 pt-20">
+          <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
+            <h3 class="text-4xl font-bold">1+</h3>
+            <p class="text-lg">Awards won</p>
+          </div>
+        </div>
       </div>
     </Container>
   </section>
