@@ -4,6 +4,11 @@ import HeroBgDark from "../components/SVG/HeroBgDark.astro";
 import Container from "../components/atoms/Container.astro";
 import Layout from "../layouts/index.astro";
 import GradientCard from "../components/GradientCard.astro";
+import ChartIcon from "../components/SVG/ChartIcon.astro";
+import CubeIcon from "../components/SVG/CubeIcon.astro";
+import ChipIcon from "../components/SVG/ChipIcon.astro";
+import EmojiHappyIcon from "../components/SVG/EmojiHappyIcon.astro";
+import LogoWhite from "../components/SVG/LogoWhite.astro";
 ---
 
 <Layout>
@@ -61,19 +66,89 @@ import GradientCard from "../components/GradientCard.astro";
       </div>
     </Container>
   </section>
-  <section>
-    <Container class="relative pt-24 pb-32">
-      <h2 class="text-5xl font-gotham text-center text-dark-700 dark:text-light-200">
+  <section class="bg-[#171717]">
+    <Container class="relative pt-24 pb-32 overflow-hidden">
+      <LogoWhite class="md:w-64 w-36 absolute opacity-10 -right-10 dark:fill-white fill-dark-100" />
+      <h2 class="text-5xl font-gotham text-center text-dark-700 dark:text-light-200 relative z-10">
         Custom Solutions, <br /> Tailored for You!
       </h2>
 
-      <div class="md:w-9/12 xl:w-7/12 mx-auto mt-16">
-        <div class="grid grid-cols-2 gap-8">
+      <div class="md:w-9/12 mx-auto mt-16 relative z-10">
+        <div class="grid sm:grid-cols-2 gap-8">
           <div class="flex flex-col gap-8">
             <GradientCard>
-              <div></div>
+              <div class="mb-16">
+                <ChartIcon class={"w-12 dark:stroke-dark-50 stroke-dark-300"} />
+              </div>
+              <div class="mb-6">
+                <h4 class="font-gotham text-dark-500 text-2xl font-medium dark:text-light-400">Software Development</h4>
+              </div>
+              <p class="text-dark-300 dark:text-dark-50">
+                From inception to deployment, our team crafts bespoke software solutions designed to streamline your
+                processes and drive growth.
+              </p>
+            </GradientCard>
+            <GradientCard>
+              <div class="mb-16">
+                <CubeIcon class={"w-12 dark:stroke-dark-50 stroke-dark-300"} />
+              </div>
+              <div class="mb-6">
+                <h4 class="font-gotham text-dark-500 text-2xl font-medium dark:text-light-400">
+                  Digital Marketing Strategies that Deliver Results
+                </h4>
+              </div>
+              <p class="text-dark-300 dark:text-dark-50">
+                Maximize your online visibility and engagement with our data-driven digital marketing solutions. From
+                SEO to social media management, we help you connect with your audience and achieve your business
+                objectives.
+              </p>
             </GradientCard>
           </div>
+          <div class="flex flex-col gap-8">
+            <GradientCard>
+              <div class="mb-16">
+                <ChipIcon class={"w-12 dark:stroke-dark-50 stroke-dark-300"} />
+              </div>
+              <div class="mb-6">
+                <h4 class="font-gotham text-dark-500 text-2xl font-medium dark:text-light-400">
+                  Web Design & Development
+                </h4>
+              </div>
+              <p class="text-dark-300 dark:text-dark-50">
+                Elevate your online presence with our stunning web designs and robust web applications. We blend
+                creativity with functionality to deliver exceptional user experiences.
+              </p>
+            </GradientCard>
+            <GradientCard>
+              <div class="mb-16">
+                <EmojiHappyIcon class={"w-12 dark:stroke-dark-50 stroke-dark-300"} />
+              </div>
+              <div class="mb-6">
+                <h4 class="font-gotham text-dark-500 text-2xl font-medium dark:text-light-400">
+                  Expert Consulting Services
+                </h4>
+              </div>
+              <p class="text-dark-300 dark:text-dark-50">
+                Gain valuable insights and strategic guidance from our experienced consultants. Whether you're launching
+                a new project or seeking to optimize existing processes, we're here to support your success.
+              </p>
+            </GradientCard>
+          </div>
+        </div>
+      </div>
+      <LogoWhite class="md:w-64 w-36 absolute opacity-10 -left-32 bottom-40 dark:fill-white fill-dark-100" />
+    </Container>
+  </section>
+  <section>
+    <Container class="pb-32 pt-24">
+      <div class="grid sm:grid-cols-2 gap-10">
+        <div class="flex flex-col gap-8">
+          <h2 class="text-5xl font-bold clip-text bg-logo font-gotham">About CR3ST</h2>
+          <p class="dark:text-dark-50 text-dark-600">
+            At CR3ST, innovation is at the heart of everything we do. With a passion for excellence and a dedication to
+            our clients' success, we bring together a team of experts from diverse backgrounds to deliver cutting-edge
+            solutions that drive tangible results.
+          </p>
         </div>
       </div>
     </Container>

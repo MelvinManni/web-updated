@@ -4,20 +4,21 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
-      animation:{
-        "fadein": "fade 3s linear forwards",
+      animation: {
+        fadein: "fade 3s linear forwards",
       },
       boxShadow: {
         xs: "0px 12px 24px -10px rgba(179, 182, 186, 0.05) ",
         sm: "0px 24px 32px -15px rgba(168, 175, 182, 0.15)",
         md: "0px 32px 48px -20px rgba(100, 112, 122, 0.15)",
         lg: "0px 48px 56px -25px rgba(100, 112, 122, 0.15)",
-        card: "0px 4px 4px 0px rgba(35, 40, 105, 0.08)"
+        card: "0px 4px 4px 0px rgba(35, 40, 105, 0.08)",
       },
       fontFamily: {
         gotham: ["Gotham", "sans-serif"],
         "dm-sans": ["DM Sans", "sans-serif"],
         inter: ["Inter", "sans-serif"],
+        jarkata: ["Jarkata", "sans-serif"],
       },
       backgroundColor: {
         page: "var(--background)",
