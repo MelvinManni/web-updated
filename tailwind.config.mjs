@@ -15,12 +15,13 @@ export default {
         "dm-sans": ["DM Sans", "sans-serif"],
         inter: ["Inter", "sans-serif"],
       },
-      backgroundColor:{
-        page: "var(--background)"
+      backgroundColor: {
+        page: "var(--background)",
       },
       backgroundImage: {
-        button: "linear-gradient(88deg, #FF44EC 23.87%, #4309E4 145.85%)",
+        button: "var(--button-background)",
       },
+
       colors: {
         primary: {
           DEFAULT: "#1601E5",
@@ -88,6 +89,7 @@ export default {
         "light-bg": "#F5F7F9",
       },
     },
+    
   },
   classAttributes: ["class", "className", "ngClass", "class:list"],
   experimental: {

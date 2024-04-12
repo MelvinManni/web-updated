@@ -9,10 +9,12 @@
   :root {
     --background: #f5f7f9;
     --text: #080808;
+    --button-background: linear-gradient(88deg, #ff44ec 23.87%, #4309e4 145.85%);
   }
   .dark {
     --background: #141414;
     --text: #fff;
+    --button-background: linear-gradient(88deg, #4309e4 23.87%, #bbb 145.85%);
   }
 }
 

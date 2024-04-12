@@ -2,6 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
+import { SITE_URL } from '../consts';
 
 interface Props {
 	title?: string;
@@ -41,7 +42,7 @@ const { title="CR3ST Digital", description, image = '/blog-placeholder-1.jpg' } 
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:url" content='https://twitter.com/Cr3st_Digital' />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={new URL(image, SITE_URL)} />
