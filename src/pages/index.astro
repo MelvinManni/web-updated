@@ -3,6 +3,7 @@ import HeroBg from "../components/SVG/HeroBg.astro";
 import HeroBgDark from "../components/SVG/HeroBgDark.astro";
 import Container from "../components/atoms/Container.astro";
 import Layout from "../layouts/index.astro";
+import GradientCard from "../components/GradientCard.astro";
 ---
 
 <Layout>
@@ -53,9 +54,24 @@ import Layout from "../layouts/index.astro";
         </div>
         <div class="pb-10 pt-20">
           <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
-            <h3 class="text-4xl font-bold">1+</h3>
-            <p class="text-lg">Awards won</p>
+            <h3 class="text-4xl font-bold">10+</h3>
+            <p class="text-lg">Service Offerings</p>
           </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+  <section>
+    <Container class="relative pt-24 pb-32">
+      <h2 class="text-5xl font-gotham text-center text-dark-700 dark:text-light-200">
+        Custom Solutions, <br /> Tailored for You!
+      </h2>
+
+      <div class="md:w-9/12 xl:w-1/2 mx-auto">
+        <div class="grid grid-cols-2 gap-8">
+          <GradientCard>
+            
+          </GradientCard>
         </div>
       </div>
     </Container>

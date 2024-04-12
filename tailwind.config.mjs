@@ -4,11 +4,15 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      animation:{
+        "fadein": "fade 3s linear forwards",
+      },
       boxShadow: {
         xs: "0px 12px 24px -10px rgba(179, 182, 186, 0.05) ",
         sm: "0px 24px 32px -15px rgba(168, 175, 182, 0.15)",
         md: "0px 32px 48px -20px rgba(100, 112, 122, 0.15)",
         lg: "0px 48px 56px -25px rgba(100, 112, 122, 0.15)",
+        card: "0px 4px 4px 0px rgba(35, 40, 105, 0.08)"
       },
       fontFamily: {
         gotham: ["Gotham", "sans-serif"],
@@ -21,6 +25,7 @@ export default {
       backgroundImage: {
         button: "var(--button-background)",
         logo: "linear-gradient(84deg, #2A04E5 -1.66%, #FF38D7 43.95%, #FFBC7B 88.88%)",
+        card: "linear-gradient(90deg, #44FF9A -0.55%, #44B0FF 22.86%, #8B44FF 48.36%, #F64 73.33%, #EBFF70 99.34%)",
       },
 
       colors: {
