@@ -1,18 +1,18 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
-import { SITE_URL } from '../consts';
+import "../styles/global.css";
+import { KEYWORDS, SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 interface Props {
-	title?: string;
-	description?: string;
-	image?: string;
+  title?: string;
+  description?: string;
+  image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title="CR3ST Digital", description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = "/blog-placeholder-1.jpg" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -20,10 +20,12 @@ const { title="CR3ST Digital", description, image = '/blog-placeholder-1.jpg' } 
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
+<meta name="author" content="Cr3st Digital Agency Ltd" />
+<meta name="keywords" content={KEYWORDS} />
 
 <!-- Font preloads -->
-<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+<link rel="preload" href="/fonts/DM_Sans/static/DMSans-Regular.ttf" as="font" type="font/ttf" crossorigin />
+<link rel="preload" href="/fonts/Gotham/Gotham-Bold.otf" as="font" type="font/otf" crossorigin />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -42,7 +44,7 @@ const { title="CR3ST Digital", description, image = '/blog-placeholder-1.jpg' } 
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content='https://twitter.com/Cr3st_Digital' />
+<meta property="twitter:url" content="https://twitter.com/Cr3st_Digital" />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, SITE_URL)} />
+<meta property="twitter:image" content={new URL(image, Astro.site)} />
