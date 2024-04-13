@@ -12,7 +12,10 @@ import Logo from "../components/SVG/Logo.astro";
 import ArrowRightIcon from "../components/SVG/ArrowRightIcon.astro";
 import Button from "../components/atoms/Button.astro";
 import Carousel from "../components/carousel/Carousel.astro";
-import TestmonialItem from "../components/TestmonialItem.astro";
+import { SECONDARY_BG, POTENTIAL_LIST } from "../consts";
+import CheckIcon from "../components/SVG/CheckIcon.astro";
+import Input from "../components/atoms/Input.astro";
+import TextArea from "../components/atoms/TextArea.astro";
 ---
 
 <Layout>
@@ -70,7 +73,7 @@ import TestmonialItem from "../components/TestmonialItem.astro";
       </div>
     </Container>
   </section>
-  <section class="dark:bg-[#171717] bg-light-300">
+  <section class={SECONDARY_BG}>
     <Container class="relative pt-24 pb-32 overflow-hidden">
       <Logo class="md:w-64 w-36 absolute opacity-10 -right-4 dark:fill-white fill-secondary" />
       <h2 class="text-5xl font-gotham text-center text-dark-700 dark:text-light-200 relative z-10">
@@ -163,7 +166,7 @@ import TestmonialItem from "../components/TestmonialItem.astro";
       <Logo class="md:w-64 w-36 absolute opacity-10 right-2 -bottom-6 dark:fill-white fill-secondary" />
     </Container>
   </section>
-  <section class="" bg-[#171717]>
+  <section class={SECONDARY_BG}>
     <Container class="pb-32 pt-24">
       <h2 class="text-4xl font-medium dark:text-light-200 text-dark-600 text-center font-gotham">
         What Our Clients Say
@@ -227,4 +230,88 @@ import TestmonialItem from "../components/TestmonialItem.astro";
       </div>
     </Container>
   </section>
+  <section>
+    <Container class="relative pt-28 pb-32">
+      <Logo class="md:w-72 w-36 absolute opacity-10 bottom-24 left-0 dark:fill-white fill-secondary" />
+      <div class="grid md:grid-cols-2 gap-8 relative z-10">
+        <div>
+          <h1 class="text-5xl font-bold text-dark-700 font-gotham dark:text-light-200 mb-4">
+            Unlock Your Potential with <span class="bg-logo clip-text">CR3ST</span>'s Innovative Solutions
+          </h1>
+          <Button> Contact Us </Button>
+        </div>
+
+        <div class="flex max-md:flex-col gap-24">
+          <div class="w-full h-1 md:h-full md:w-1 bg-border"></div>
+          <div class="flex flex-col gap-5">
+            {
+              POTENTIAL_LIST.map((item) => (
+                <div class="flex items-start gap-4">
+                  <CheckIcon class="w-6 dark:stroke-gray-600 stroke-primary" />
+                  <p class="dark:text-white text-dark-700">{item}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class={SECONDARY_BG}>
+    <Container class="pb-32 pt-8 overflow-hidden">
+      <div class="grid md:grid-cols-2 gap-28">
+        <div class="flex max-md:flex-col gap-36">
+          <div class="flex flex-col gap-16 justify-between pt-10">
+            <p class="text-sm font-bold clip-text bg-logo-reverse uppercase w-fit">Have a project in mind?</p>
+            <div>
+              <h1 class="text-6xl font-bold text-dark-700 dark:text-light-200">
+                Ready to Get Started?
+                <span class="bg-gradient-primary clip-text">Let's Talk!</span>
+              </h1>
+              <p class="dark:text-dark-100 font-medium text-lg text-dark-400 mt-6">
+                Whether you have a specific project in mind or need guidance on where to begin, our team is here to
+                help. Reach out to us today to discuss your goals and discover how CR3ST can empower your business for
+                success
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-gradient">
+          <div class="w-full relative h-full bg-light-50 dark:bg-black rounded-lg z-10 py-10 px-9">
+            <p class="font-gotham font-medium text-xl dark:text-gray-200 text-dark-400">
+              Let us know about your project & we will help you grow your business from scratch.
+            </p>
+            <form action="https://formspree.io/f/xoqgpyyk" method="post">
+              <div class="flex flex-col gap-4 mt-8 mb-6">
+                <Input name="Full Name" type="text" placeholder="Your Name" />
+                <Input name="Email" type="email" placeholder="Your Email" />
+                <Input name="Phone Number" type="text" placeholder="Your Phone" />
+                <TextArea name="Message" placeholder="Your Message" />
+              </div>
+              <div class="bg-button_border rounded-lg p-px w-fit h-fit">
+                <Button class="bg-none dark:bg-none bg-light-50 dark:bg-black font-dm-sans font-bold">
+                  <span class="clip-text bg-gradient-secondary dark:hidden"> Send Message</span>
+                  <span class="hidden dark:inline"> Send Message</span>
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
 </Layout>
+
+<style>
+  .card-gradient::before {
+    content: "";
+    position: absolute;
+    width: 371px;
+    height: 519px;
+    background: linear-gradient(98deg, #ffbc7b 0%, #7f60f9 100%);
+    filter: blur(105px);
+    transform: rotate(-90deg);
+    z-index: 0;
+  }
+</style>

@@ -19,6 +19,7 @@ export default {
         "dm-sans": ["DM Sans", "sans-serif"],
         inter: ["Inter", "sans-serif"],
         jarkata: ["Jarkata", "sans-serif"],
+        ibm_plex_sans: ["IBM Plex Sans", "sans-serif"],
       },
       backgroundColor: {
         page: "var(--background)",
@@ -26,7 +27,12 @@ export default {
       backgroundImage: {
         button: "var(--button-background)",
         logo: "linear-gradient(84deg, #2A04E5 -1.66%, #FF38D7 43.95%, #FFBC7B 88.88%)",
+        "logo-reverse": "linear-gradient(97deg, #FFBC7B 35.65%, #581BFF 114.13%)",
         card: "linear-gradient(90deg, #44FF9A -0.55%, #44B0FF 22.86%, #8B44FF 48.36%, #F64 73.33%, #EBFF70 99.34%)",
+        border: "linear-gradient(98deg, #6DDCFF 0%, #7F60F9 100%)",
+        button_border: "linear-gradient(98deg, #FF44EC 0%, #FFBC7B 100%)",
+        "gradient-primary": "linear-gradient(90deg, #FF44EC 28.94%, #421BFF 114.71%)",
+        "gradient-secondary": "linear-gradient(90deg, #4309E4 0%, #FF38D7 100%)",
       },
 
       colors: {
