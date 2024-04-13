@@ -34,7 +34,11 @@ export const ICONS = {
   instagram: InstagramIcon,
 };
 
-export const SOCIAL_LINKS = [
+export const SOCIAL_LINKS: {
+  name: string;
+  url: string;
+  icon: keyof typeof ICONS;
+}[] = [
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/company/cr3st-digital-agency/",

@@ -1,4 +1,5 @@
 ---
+import { ICONS, SOCIAL_LINKS } from "../consts";
 import Container from "./atoms/Container.astro";
 import ThemeToggle from "./atoms/ThemeToggle.astro";
 
@@ -16,9 +17,25 @@ const today = new Date();
           We strive to empower businesses and individuals to reach new heights of success.
         </p>
       </div>
-      <div class="text-center lg:text-right display flex justify-center lg:justify-end gap-10 h-full">
-        <a href="/terms-and-conditions" class="text-gray-50 hover:text-white after:bg-gray-600"> Terms & Conditions </a>
-        <a href="/privacy-policy" class="text-gray-50 hover:text-white after:bg-gray-600"> Privacy Policy </a>
+      <div class="flex flex-col-reverse lg:flex-col gap-6">
+        <div class="flex gap-8 social justify-center max-lg:my-4 lg:justify-end">
+          {
+            SOCIAL_LINKS.map(({ name, url, icon }) => {
+              const Icon = ICONS[icon];
+              return (
+                <a href={url} target="_blank" class="text-gray-50 hover:text-white after:bg-gray-600">
+                  <Icon />
+                </a>
+              );
+            })
+          }
+        </div>
+        <div class="text-center lg:text-right display flex justify-center lg:justify-end gap-10 h-full links">
+          <a href="/terms-and-conditions" class="text-gray-50 hover:text-white after:bg-gray-600">
+            Terms & Conditions
+          </a>
+          <a href="/privacy-policy" class="text-gray-50 hover:text-white after:bg-gray-600"> Privacy Policy </a>
+        </div>
       </div>
     </div>
   </Container>
@@ -32,7 +49,7 @@ const today = new Date();
     height: fit-content;
   }
 
-  a::after {
+  .links a::after {
     content: "";
     position: absolute;
     width: 80%;
