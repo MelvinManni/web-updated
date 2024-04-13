@@ -13,25 +13,27 @@ type Props = {
 const { items } = Astro.props;
 ---
 
-<div id="default-carousel" class="relative w-full overflow-hidden" data-carousel="slide">
-  <!-- Carousel wrapper -->
-  <div class="relative flex flex-row md:gap-20 gap-16 md:px-20 carousel-container" id="carousel-container">
-    {
-      items.map((comp) => (
-        <div class="carousel-item max-md:basis-full">
-          <TestmonialItem {...comp} />
-        </div>
-      ))
-    }
+<div class="px-20 relative">
+  <div id="default-carousel" class="relative w-full overflow-hidden" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="flex carousel-container w-full" id="carousel-container">
+      {
+        items.map((comp) => (
+          <div class="carousel-item">
+            <TestmonialItem {...comp} />
+          </div>
+        ))
+      }
+    </div>
+    <!-- Slider controls -->
   </div>
-  <!-- Slider controls -->
   <button
     type="button"
     class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group outline-none"
     data-carousel-prev
   >
     <span
-      class="inline-flex items-center justify-center w-6 h-6 sm:w-10 smh-10 rounded-lg sm:rounded-xl bg-light-600 dark:bg-[#313539] group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+      class="inline-flex items-center justify-center w-6 h-6 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-light-600 dark:bg-[#313539] group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
     >
       <svg
         class="w-3 h-3 sm:w-4 sm:h-4 text-white dark:text-gray-800 rtl:rotate-180"
@@ -52,7 +54,7 @@ const { items } = Astro.props;
     data-carousel-next
   >
     <span
-      class="inline-flex items-center justify-center w-6 h-6 sm:w-10 smh-10 rounded-lg sm:rounded-xl bg-light-600 dark:bg-[#313539] group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+      class="inline-flex items-center justify-center w-6 h-6 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-light-600 dark:bg-[#313539] group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
     >
       <svg
         class="w-3 h-3 sm:w-4 sm:h-4 text-white dark:text-gray-800 rtl:rotate-180"
@@ -68,16 +70,17 @@ const { items } = Astro.props;
     </span>
   </button>
 </div>
-
 <style>
   .carousel-item {
     flex: 0 0 50%;
     scroll-snap-align: start;
+    padding: 0 40px;
   }
 
   @media not all and (min-width: 768px) {
-    .max-md\:basis-full {
-      flex-basis: 100%;
+    .carousel-item {
+      flex: 0 0 100%;
+      padding: 0px;
     }
   }
 
@@ -95,7 +98,7 @@ const { items } = Astro.props;
   let currentIndex = 0;
   let slideDistance = 50;
   let viewScreen = 2;
-  
+
   if (window.screen.width < 768) {
     slideDistance = 100;
     viewScreen = 1;
@@ -110,7 +113,7 @@ const { items } = Astro.props;
       viewScreen = 2;
     }
   });
-  
+
   const maxIndex = Math.ceil(items.length - 2);
   console.log(currentIndex, maxIndex);
 
