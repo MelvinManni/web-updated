@@ -1,5 +1,5 @@
 ---
-import FormattedDate from './FormattedDate.astro';
+import FormattedDate from "./FormattedDate.astro";
 
 type Props = {
   image: string;
@@ -16,10 +16,12 @@ const { image, title, link, date, primaryTags } = Astro.props;
   <img src={image} alt={title} class="w-full rounded-lg" />
 
   <div class="mt-4 mb-3 flex dark:text-light-400 text-dark-500 text-sm font-medium items-center">
-    <p>{primaryTags}</p> <div class="h-1 w-1 dark:bg-light-400 text-bg-500 mx-2 rounded-full"></div> <FormattedDate date={date} />
+    <p class="capitalize">{primaryTags}</p>
+    <div class="h-1 w-1 dark:bg-light-400 bg-dark-500 mx-2 rounded-full"></div>
+    <FormattedDate date={date} />
   </div>
 
-    <h3 class="text-xl font-medium font-gotham dark:text-light-400 text-dark-500">{title}</h3>
+  <h3 class="text-xl font-medium font-gotham dark:text-light-400 text-dark-500 w-full">{title}</h3>
 </a>
 
 <style></style>

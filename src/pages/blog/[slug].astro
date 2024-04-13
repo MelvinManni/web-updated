@@ -1,0 +1,63 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import { useStoryblokApi, renderRichText } from "@storyblok/astro";
+import Layout from "../../layouts/index.astro";
+import Container from "../../components/atoms/Container.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import BaseHead from "../../components/BaseHead.astro";
+
+export async function getStaticPaths() {
+  const storyBlokApi = useStoryblokApi();
+  const {
+    data: { stories },
+  } = await storyBlokApi.getStories({
+    version: "published",
+  });
+
+  const paths = stories.map((story) => ({
+    params: {
+      slug: story.slug,
+    },
+  }));
+
+  return paths.flatMap((path) => path);
+}
+
+type Props = {};
+const slug = (Astro.params as any).slug;
+const storyBlokApi = useStoryblokApi();
+const {
+  data: { story },
+} = await storyBlokApi.getStory(`posts/${slug}`, {
+  version: "published",
+});
+
+const content = story.content;
+const renderedRichText = renderRichText(content.body);
+---
+
+<Layout title={content.title} description={content.summary}>
+  <Container class="max-w-[1080px] pt-14 pb-32">
+    <img src={content.cover} alt={content.title} class="w-full mx-auto rounded-lg" />
+
+    <div class="mt-4 mb-3 flex flex-col dark:text-light-400 text-dark-500 font-medium items-start">
+      <p class="text-lg font-bold">{content.author}</p>
+      <FormattedDate date={new Date(story.published_at ?? story.first_published_at ?? content.date)} />
+    </div>
+
+    <h3 class="sm:text-4xl font-medium font-gotham dark:text-light-400 text-dark-500 w-full">{content.title}</h3>
+    <div class="flex gap-2 flex-wrap mt-4">
+      {
+        content.tags.map((tag: string) => (
+          <div class="px-2 rounded dark:text-light-400 text-dark-500 dark:bg-light-50/10 bg-dark-50">
+            <span>{tag}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="max-sm:text-sm dark:text-dark-100 text-dark-400 flex flex-col gap-2 mt-10">
+      <div class="prose" set:html={renderedRichText} />
+    </div>
+  </Container>
+</Layout>

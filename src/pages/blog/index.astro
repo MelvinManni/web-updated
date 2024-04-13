@@ -1,18 +1,22 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
-import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
+// import { getCollection } from "astro:content";
 import Layout from "../../layouts/index.astro";
 import BlogPostCard from "../../components/BlogPostCard.astro";
 import Container from "../../components/atoms/Container.astro";
+import { useStoryblokApi } from "@storyblok/astro";
 
-const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+const storyBlokApi = useStoryblokApi();
+
+const {
+  data: { stories },
+} = await storyBlokApi.getStories({
+  version: "published",
+  per_page: 6,
+});
+
 ---
 
-<Layout>
+<Layout title="Blog" >
   <Container class="pt-14 pb-32">
     <div class="text-center mb-16">
       <h2 class="text-4xl font-gotham font-medium dark:text-light-400 text-dark-500 mb-5">Latest from our blog</h2>
@@ -21,34 +25,17 @@ const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueO
       </p>
     </div>
     <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-y-24 gap-x-16">
-      <BlogPostCard
-        title="Why choose a theme that looks good with WooCommerce"
-        primaryTags="Growth"
-        date={new Date()}
-        image="https://via.placeholder.com/150"
-        link="/blog"
-      />
-      <BlogPostCard
-        title="Why choose a theme that looks good with WooCommerce"
-        primaryTags="Growth"
-        date={new Date()}
-        image="https://via.placeholder.com/150"
-        link="/blog"
-      />
-      <BlogPostCard
-        title="Why choose a theme that looks good with WooCommerce"
-        primaryTags="Growth"
-        date={new Date()}
-        image="https://via.placeholder.com/150"
-        link="/blog"
-      />
-      <BlogPostCard
-        title="Why choose a theme that looks good with WooCommerce"
-        primaryTags="Growth"
-        date={new Date()}
-        image="https://via.placeholder.com/150"
-        link="/blog"
-      />
+      {
+        stories.map((story) => (
+          <BlogPostCard
+            title={story.content.title}
+            primaryTags={story.content.tags[0]}
+            date={new Date(story.published_at ?? story.first_published_at ?? story.content.date)}
+            image={`https:${story.content.cover}`}
+            link={"/blog/" + story.slug}
+          />
+        ))
+      }
     </div>
   </Container>
 </Layout>
