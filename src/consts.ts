@@ -5,6 +5,9 @@ import ChartIcon from "./components/SVG/ChartIcon.astro";
 import ChipIcon from "./components/SVG/ChipIcon.astro";
 import CubeIcon from "./components/SVG/CubeIcon.astro";
 import EmojiHappyIcon from "./components/SVG/EmojiHappyIcon.astro";
+import InstagramIcon from "./components/SVG/InstagramIcon.astro";
+import LinkedInIcon from "./components/SVG/LinkedInIcon.astro";
+import TwitterIcon from "./components/SVG/TwitterIcon.astro";
 
 export const SITE_TITLE = "CR3ST Digital Agency";
 export const SITE_DESCRIPTION =
@@ -26,4 +29,25 @@ export const ICONS = {
   cube: CubeIcon,
   chip: ChipIcon,
   "emoji-happy": EmojiHappyIcon,
+  linkedin: LinkedInIcon,
+  twitter: TwitterIcon,
+  instagram: InstagramIcon,
 };
+
+export const SOCIAL_LINKS = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/cr3st-digital-agency/",
+    icon: "linkedin",
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/Cr3st_Digital",
+    icon: "twitter",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/cr3st.digital/",
+    icon: "instagram",
+  },
+];
