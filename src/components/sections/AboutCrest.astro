@@ -3,11 +3,15 @@ import ArrowRightIcon from "../SVG/ArrowRightIcon.astro";
 import Logo from "../SVG/Logo.astro";
 import Button from "../atoms/Button.astro";
 import Container from "../atoms/Container.astro";
+ type Props = {
+    class?: string
+ }
 
+const { class: className }: Props = Astro.props;
 
 ---
 
-<section>
+<section class={className}>
   <Container class="pb-32 pt-0 relative overflow-hidden">
     <div class="grid md:grid-cols-2 gap-10 md:gap-48 items-center relative z-10">
       <div class="flex flex-col gap-8 pt-20">

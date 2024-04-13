@@ -107,6 +107,14 @@ hr {
   text-fill-color: transparent;
 }
 
+.dark .dark-no-clip-text {
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+  text-fill-color: initial;
+}
+
+
 /* Style Scroll bars */
 
 /* width */

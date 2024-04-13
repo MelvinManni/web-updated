@@ -5,9 +5,15 @@ import Button from "./atoms/Button.astro";
 import ArrowRightIcon from "./SVG/ArrowRightIcon.astro";
 import MenuIcon from "./SVG/MenuIcon.astro";
 import CloseIcon from "./SVG/CloseIcon.astro";
+
+type Props = {
+  bg?: string;
+};
+
+const { bg }: Props = Astro.props;
 ---
 
-<div>
+<>
   <header class="py-6 md:py-10 px-8 z-50 fixed top-0 w-full bg-page" id="header">
     <nav class="flex justify-between items-center container mx-auto">
       <div class="flex gap-10 items-center">
@@ -20,7 +26,7 @@ import CloseIcon from "./SVG/CloseIcon.astro";
             <CloseIcon class="w-11 h-11" />
           </button>
           <HeaderLink href="/about">About</HeaderLink>
-          <HeaderLink href="/project">Project</HeaderLink>
+          <HeaderLink href="/projects">Projects</HeaderLink>
           <HeaderLink href="/services">Services</HeaderLink>
           <HeaderLink href="/blog">Blog</HeaderLink>
         </div>
@@ -34,58 +40,65 @@ import CloseIcon from "./SVG/CloseIcon.astro";
       </div>
     </nav>
   </header>
-</div>
-<script>
-  const menu = document.getElementById("menu");
-  const menuBtn = document.getElementById("btn-open-menu");
-  const menuCloseBtn = document.getElementById("btn-close-menu");
-  const header = document.getElementById("header");
+  <div id="header-spacing" class={"w-full " + bg}></div>
+  <script>
+    const menu = document.getElementById("menu");
+    const menuBtn = document.getElementById("btn-open-menu");
+    const menuCloseBtn = document.getElementById("btn-close-menu");
+    const header = document.getElementById("header");
 
-  menuBtn?.addEventListener("click", () => {
-    menu?.classList.add("open");
-  });
+    menuBtn?.addEventListener("click", () => {
+      menu?.classList.add("open");
+    });
 
-  menuCloseBtn?.addEventListener("click", () => {
-    menu?.classList.remove("open");
-  });
+    menuCloseBtn?.addEventListener("click", () => {
+      menu?.classList.remove("open");
+    });
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > header?.offsetHeight!) {
-      document.querySelector("header")?.classList.add("bg-page", "shadow-md");
-    } else {
-      document.querySelector("header")?.classList.remove("bg-page", "shadow-md");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > header?.offsetHeight!) {
+        // header?.classList.remove("bg-transparent");
+        header?.classList.add("bg-page", "shadow-md");
+      }
+
+      if (window.scrollY < header?.offsetHeight!) {
+        header?.classList.remove("bg-page", "shadow-md");
+        // header?.classList.add("bg-transparent");
+      }
+    });
+
+    document.getElementById("header-spacing")?.style.setProperty("height", `${header?.offsetHeight}px`);
+  </script>
+  <style>
+    @media screen and (max-width: 768px) {
+      #menu {
+        position: fixed;
+        top: 0;
+        left: -200%;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        z-index: 2000;
+        transition: 1.3s ease all;
+        overflow-y: auto;
+        padding: 80px 32px 0 32px;
+      }
+
+      /* Remove scrollbar from #menu */
+      #menu::-webkit-scrollbar {
+        display: none;
+      }
+
+      #menu.open {
+        left: 0;
+      }
+
+      #menu a {
+        font-size: 1.9rem;
+      }
     }
-  });
-</script>
-<style>
-  @media screen and (max-width: 768px) {
-    #menu {
-      position: fixed;
-      top: 0;
-      left: -200%;
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      z-index: 2000;
-      transition: 1.3s ease all;
-      overflow-y: auto;
-      padding: 80px 32px 0 32px;
-    }
-
-    /* Remove scrollbar from #menu */
-    #menu::-webkit-scrollbar {
-      display: none;
-    }
-
-    #menu.open {
-      left: 0;
-    }
-
-    #menu a {
-      font-size: 1.9rem;
-    }
-  }
-</style>
+  </style>
+</>

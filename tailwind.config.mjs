@@ -7,6 +7,9 @@ export default {
       animation: {
         fadein: "fade 3s linear forwards",
       },
+      borderRadius:{
+        'lg': '10px',
+      },
       boxShadow: {
         xs: "0px 12px 24px -10px rgba(179, 182, 186, 0.05) ",
         sm: "0px 24px 32px -15px rgba(168, 175, 182, 0.15)",
@@ -23,6 +26,8 @@ export default {
       },
       backgroundColor: {
         page: "var(--background)",
+        // light: "#f5f7f9",
+        // dark: "#141414",
       },
       backgroundImage: {
         button: "var(--button-background)",
