@@ -16,6 +16,7 @@ import { SECONDARY_BG, POTENTIAL_LIST } from "../consts";
 import CheckIcon from "../components/SVG/CheckIcon.astro";
 import Input from "../components/atoms/Input.astro";
 import TextArea from "../components/atoms/TextArea.astro";
+import SolutionsCard from "../components/SolutionsCard.astro";
 ---
 
 <Layout>
@@ -27,11 +28,11 @@ import TextArea from "../components/atoms/TextArea.astro";
         <img src="/images/branding/icon.svg" alt="Logo" class="md:w-64 w-36" />
 
         <div class="text-center mt-20 font-gotham">
-          <h1 class="text-8xl font-bold text-primary dark:text-white">
+          <h1 class="sm:text-8xl text-5xl font-bold text-primary dark:text-white">
             Welcome to <br />
             <span class="bg-logo clip-text">CR3ST!</span>
           </h1>
-          <p class="text-xl font-gotham mt-8 font-light dark:text-white text-dark-400">
+          <p class="text-xs sm:text-xl font-gotham mt-8 font-light dark:text-white text-dark-400">
             Transforming Ideas into Reality...
           </p>
         </div>
@@ -45,29 +46,29 @@ import TextArea from "../components/atoms/TextArea.astro";
   </section>
   <section>
     <Container>
-      <div class="grid grid-cols-4 gap-8">
-        <div class="pb-10 pt-20">
+      <div class="grid grid-cols-2 xl:grid-cols-4 gap-8">
+        <div class="pb-10 p pt-20">
           <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
-            <h3 class="text-4xl font-bold">10+</h3>
-            <p class="text-lg">Projects</p>
+            <h3 class="text-lg sm:text-4xl font-bold">10+</h3>
+            <p class="text-xs sm:text-lg">Projects</p>
           </div>
         </div>
-        <div class="pb-10 pt-20">
+        <div class="pb-10 p pt-20">
           <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
-            <h3 class="text-4xl font-bold">6+</h3>
-            <p class="text-lg">Happy Clients</p>
+            <h3 class="text-lg sm:text-4xl font-bold">6+</h3>
+            <p class="text-xs sm:text-lg">Happy Clients</p>
           </div>
         </div>
-        <div class="pb-10 pt-20">
+        <div class="pb-10 p pt-20">
           <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
-            <h3 class="text-4xl font-bold">20+</h3>
-            <p class="text-lg">Designs completed</p>
+            <h3 class="text-lg sm:text-4xl font-bold">20+</h3>
+            <p class="text-xs sm:text-lg">Designs completed</p>
           </div>
         </div>
-        <div class="pb-10 pt-20">
+        <div class="pb-10 p pt-20">
           <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
-            <h3 class="text-4xl font-bold">10+</h3>
-            <p class="text-lg">Service Offerings</p>
+            <h3 class="text-lg sm:text-4xl font-bold">10+</h3>
+            <p class="text-xs sm:text-lg">Service Offerings</p>
           </div>
         </div>
       </div>
@@ -76,70 +77,35 @@ import TextArea from "../components/atoms/TextArea.astro";
   <section class={SECONDARY_BG}>
     <Container class="relative pt-24 pb-32 overflow-hidden">
       <Logo class="md:w-64 w-36 absolute opacity-10 -right-4 dark:fill-white fill-secondary" />
-      <h2 class="text-5xl font-gotham text-center text-dark-700 dark:text-light-200 relative z-10">
+      <h2 class="text-3xl sm:text-5xl font-gotham text-center text-dark-700 dark:text-light-200 relative z-10">
         Custom Solutions, <br /> Tailored for You!
       </h2>
 
       <div class="md:w-9/12 mx-auto mt-16 relative z-10">
         <div class="grid md:grid-cols-2 gap-8">
           <div class="flex flex-col gap-8">
-            <GradientCard>
-              <div class="mb-16">
-                <ChartIcon class={"w-12 dark:stroke-dark-50 stroke-dark-300"} />
-              </div>
-              <div class="mb-6">
-                <h4 class="font-gotham text-dark-500 text-2xl font-medium dark:text-light-400">Software Development</h4>
-              </div>
-              <p class="text-dark-300 dark:text-dark-50">
-                From inception to deployment, our team crafts bespoke software solutions designed to streamline your
-                processes and drive growth.
-              </p>
-            </GradientCard>
-            <GradientCard>
-              <div class="mb-16">
-                <CubeIcon class={"w-12 dark:stroke-dark-50 stroke-dark-300"} />
-              </div>
-              <div class="mb-6">
-                <h4 class="font-gotham text-dark-500 text-2xl font-medium dark:text-light-400">
-                  Digital Marketing Strategies that Deliver Results
-                </h4>
-              </div>
-              <p class="text-dark-300 dark:text-dark-50">
-                Maximize your online visibility and engagement with our data-driven digital marketing solutions. From
-                SEO to social media management, we help you connect with your audience and achieve your business
-                objectives.
-              </p>
-            </GradientCard>
+            <SolutionsCard
+              icon="chart"
+              title="Software Development"
+              description="From inception to deployment, our team crafts bespoke software solutions designed to streamline your processes and drive growth."
+            />
+            <SolutionsCard
+              icon="cube"
+              title="Digital Marketing Strategies that Deliver Results"
+              description="Maximize your online visibility and engagement with our data-driven digital marketing solutions. From  SEO to social media management, we help you connect with your audience and achieve your business objectives."
+            />
           </div>
           <div class="flex flex-col gap-8">
-            <GradientCard>
-              <div class="mb-16">
-                <ChipIcon class={"w-12 dark:stroke-dark-50 stroke-dark-300"} />
-              </div>
-              <div class="mb-6">
-                <h4 class="font-gotham text-dark-500 text-2xl font-medium dark:text-light-400">
-                  Web Design & Development
-                </h4>
-              </div>
-              <p class="text-dark-300 dark:text-dark-50">
-                Elevate your online presence with our stunning web designs and robust web applications. We blend
-                creativity with functionality to deliver exceptional user experiences.
-              </p>
-            </GradientCard>
-            <GradientCard>
-              <div class="mb-16">
-                <EmojiHappyIcon class={"w-12 dark:stroke-dark-50 stroke-dark-300"} />
-              </div>
-              <div class="mb-6">
-                <h4 class="font-gotham text-dark-500 text-2xl font-medium dark:text-light-400">
-                  Expert Consulting Services
-                </h4>
-              </div>
-              <p class="text-dark-300 dark:text-dark-50">
-                Gain valuable insights and strategic guidance from our experienced consultants. Whether you're launching
-                a new project or seeking to optimize existing processes, we're here to support your success.
-              </p>
-            </GradientCard>
+            <SolutionsCard
+              icon="chip"
+              title="Web Design & Development"
+              description="Elevate your online presence with our stunning web designs and robust web applications. We blend creativity with functionality to deliver exceptional user experiences."
+            />
+            <SolutionsCard
+              icon="emoji-happy"
+              title="Expert Consulting Services"
+              description="Gain valuable insights and strategic guidance from our experienced consultants. Whether you're launching a new project or seeking to optimize existing processes, we're here to support your success."
+            />
           </div>
         </div>
       </div>
@@ -148,10 +114,10 @@ import TextArea from "../components/atoms/TextArea.astro";
   </section>
   <section>
     <Container class="pb-32 pt-0 relative overflow-hidden">
-      <div class="grid md:grid-cols-2 md:gap-48 items-center relative z-10">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-48 items-center relative z-10">
         <div class="flex flex-col gap-8">
-          <h2 class="text-5xl font-bold clip-text bg-logo font-gotham">About CR3ST</h2>
-          <p class="dark:text-dark-50 text-dark-600 font-jarkata">
+          <h2 class="text-4xl sm:text-5xl font-bold clip-text bg-logo font-gotham">About CR3ST</h2>
+          <p class="max-sm:text-sm dark:text-dark-50 text-dark-600 font-jarkata">
             At CR3ST, innovation is at the heart of everything we do. With a passion for excellence and a dedication to
             our clients' success, we bring together a team of experts from diverse backgrounds to deliver cutting-edge
             solutions that drive tangible results.
@@ -168,7 +134,7 @@ import TextArea from "../components/atoms/TextArea.astro";
   </section>
   <section class={SECONDARY_BG}>
     <Container class="pb-32 pt-24">
-      <h2 class="text-4xl font-medium dark:text-light-200 text-dark-600 text-center font-gotham">
+      <h2 class="text-2xl sm:text-4xl font-medium dark:text-light-200 text-dark-600 text-center font-gotham">
         What Our Clients Say
       </h2>
 
@@ -235,7 +201,7 @@ import TextArea from "../components/atoms/TextArea.astro";
       <Logo class="md:w-72 w-36 absolute opacity-10 bottom-24 left-0 dark:fill-white fill-secondary" />
       <div class="grid md:grid-cols-2 gap-8 relative z-10">
         <div>
-          <h1 class="text-5xl font-bold text-dark-700 font-gotham dark:text-light-200 mb-4">
+          <h1 class="text-3xl sm:text-5xl font-bold text-dark-700 font-gotham dark:text-light-200 mb-4">
             Unlock Your Potential with <span class="bg-logo clip-text">CR3ST</span>'s Innovative Solutions
           </h1>
           <Button> Contact Us </Button>
@@ -248,7 +214,7 @@ import TextArea from "../components/atoms/TextArea.astro";
               POTENTIAL_LIST.map((item) => (
                 <div class="flex items-start gap-4">
                   <CheckIcon class="w-6 dark:stroke-gray-600 stroke-primary" />
-                  <p class="dark:text-white text-dark-700">{item}</p>
+                  <p class="dark:text-white text-dark-700 sm:text-lg">{item}</p>
                 </div>
               ))
             }
@@ -263,13 +229,13 @@ import TextArea from "../components/atoms/TextArea.astro";
       <div class="grid md:grid-cols-2 gap-28">
         <div class="flex max-md:flex-col gap-36">
           <div class="flex flex-col gap-16 justify-between pt-10">
-            <p class="text-sm font-bold clip-text bg-logo-reverse uppercase w-fit">Have a project in mind?</p>
+            <p class="text-sm font-bold clip-text bg-logo-reverse uppercase w-fit max-md:mx-auto max-md:text-center">Have a project in mind?</p>
             <div>
-              <h1 class="text-6xl font-bold text-dark-700 dark:text-light-200">
+              <h1 class="max-md:text-center text-4xl sm:text-6xl font-bold text-dark-700 dark:text-light-200">
                 Ready to Get Started?
                 <span class="bg-gradient-primary clip-text">Let's Talk!</span>
               </h1>
-              <p class="dark:text-dark-100 font-medium text-lg text-dark-400 mt-6">
+              <p class="dark:text-dark-100 font-medium sm:text-lg text-dark-400 mt-6 max-md:text-center">
                 Whether you have a specific project in mind or need guidance on where to begin, our team is here to
                 help. Reach out to us today to discuss your goals and discover how CR3ST can empower your business for
                 success

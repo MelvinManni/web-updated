@@ -6,10 +6,8 @@ type Props = HTMLAttributes<"div">;
 const { class: className, ...rest } = Astro.props;
 ---
 
-<div class="px-8">
-  <div class:list={["container mx-auto lg:px-16 xl:px-32", className]}>
+  <div class:list={["container mx-auto px-6 lg:px-16 xl:px-32", className]}>
     <slot />
   </div>
-</div>
 
 <style></style>

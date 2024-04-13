@@ -1,6 +1,11 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
+import ChartIcon from "./components/SVG/ChartIcon.astro";
+import ChipIcon from "./components/SVG/ChipIcon.astro";
+import CubeIcon from "./components/SVG/CubeIcon.astro";
+import EmojiHappyIcon from "./components/SVG/EmojiHappyIcon.astro";
+
 export const SITE_TITLE = "CR3ST Digital Agency";
 export const SITE_DESCRIPTION =
   "CR3ST: Where Tech Meets Brilliance. We build the future of Business with Innovative ERP, Web Design & Mobile Apps.";
@@ -15,3 +20,10 @@ export const POTENTIAL_LIST = [
   "Discuss your unique goals and explore how CR3ST can bring your vision to life.",
   "Start your journey towards success with CR3ST's expertise and dedication to excellence.",
 ];
+
+export const ICONS = {
+  chart: ChartIcon,
+  cube: CubeIcon,
+  chip: ChipIcon,
+  "emoji-happy": EmojiHappyIcon,
+};

@@ -7,36 +7,39 @@ import MenuIcon from "./SVG/MenuIcon.astro";
 import CloseIcon from "./SVG/CloseIcon.astro";
 ---
 
-<header class="py-10 px-8">
-  <nav class="flex justify-between items-center container mx-auto">
-    <div class="flex gap-10 items-center">
-      <a href="/" class="mr-20">
-        <img class="hidden dark:block w-24" src="/images/branding/logo-white.svg" alt="" />
-        <img class="dark:hidden w-24" src="/images/branding/logo.svg" alt="" />
-      </a>
-      <div class="flex items-center gap-8 menu max-md:bg-page" id="menu">
-        <button id="btn-close-menu" class="md:hidden absolute right-5 top-5">
-          <CloseIcon class="w-11 h-11" />
-        </button>
-        <HeaderLink href="/about">About</HeaderLink>
-        <HeaderLink href="/project">Project</HeaderLink>
-        <HeaderLink href="/services">Services</HeaderLink>
-        <HeaderLink href="/blog">Blog</HeaderLink>
+<div>
+  <header class="py-6 md:py-10 px-8 z-50 fixed top-0 w-full bg-page" id="header">
+    <nav class="flex justify-between items-center container mx-auto">
+      <div class="flex gap-10 items-center">
+        <a href="/" class="mr-20">
+          <img class="hidden dark:block w-24" src="/images/branding/logo-white.svg" alt="" />
+          <img class="dark:hidden w-24" src="/images/branding/logo.svg" alt="" />
+        </a>
+        <div class="flex items-center gap-8 menu max-md:bg-page" id="menu">
+          <button id="btn-close-menu" class="md:hidden absolute right-5 top-5">
+            <CloseIcon class="w-11 h-11" />
+          </button>
+          <HeaderLink href="/about">About</HeaderLink>
+          <HeaderLink href="/project">Project</HeaderLink>
+          <HeaderLink href="/services">Services</HeaderLink>
+          <HeaderLink href="/blog">Blog</HeaderLink>
+        </div>
       </div>
-    </div>
 
-    <div class="flex items-center">
-      <button id="btn-open-menu" class="md:hidden">
-        <MenuIcon class="w-11 h-full" />
-      </button>
-      <Button class="hidden md:flex">Get Started! <ArrowRightIcon class="ml-2" /> </Button>
-    </div>
-  </nav>
-</header>
+      <div class="flex items-center">
+        <button id="btn-open-menu" class="md:hidden">
+          <MenuIcon class="w-11 h-full" />
+        </button>
+        <Button class="hidden md:flex">Get Started! <ArrowRightIcon class="ml-2" /> </Button>
+      </div>
+    </nav>
+  </header>
+</div>
 <script>
   const menu = document.getElementById("menu");
   const menuBtn = document.getElementById("btn-open-menu");
   const menuCloseBtn = document.getElementById("btn-close-menu");
+  const header = document.getElementById("header");
 
   menuBtn?.addEventListener("click", () => {
     menu?.classList.add("open");
@@ -44,6 +47,14 @@ import CloseIcon from "./SVG/CloseIcon.astro";
 
   menuCloseBtn?.addEventListener("click", () => {
     menu?.classList.remove("open");
+  });
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > header?.offsetHeight!) {
+      document.querySelector("header")?.classList.add("bg-page", "shadow-md");
+    } else {
+      document.querySelector("header")?.classList.remove("bg-page", "shadow-md");
+    }
   });
 </script>
 <style>
