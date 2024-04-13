@@ -1,0 +1,42 @@
+---
+import { type Projects, ICONS } from "../../consts";
+import Container from "../atoms/Container.astro";
+
+type Props = Projects & {
+  id: string;
+};
+
+const { title, description, cta, id, thumbnail }: Props = Astro.props;
+
+const Icon = cta.icon ? ICONS[cta.icon] : ICONS["arrow-right"];
+---
+
+<section id={id} class="dark:odd:bg-[#040404] odd:bg-[#F9FAFB] pt-32 pb-36 group">
+  <Container>
+    <div
+      class="project-card flex flex-col group-even:flex-col-reverse md:flex-row md:group-even:flex-row-reverse gap-20 min-w-full"
+    >
+      <div class="flex-1">
+        <p class="text-primary dark:text-primary-200 text-sm uppercase font-bold max-md:text-center">Project</p>
+        <h3
+          class="font-gotham font-bold max-md:text-center text-2xl sm:text-5xl text-dark-800 dark:text-light-300 mt-9"
+        >
+          {title}
+        </h3>
+        <p class="dark:text-dark-100 max-md:text-center text-dark-400 mt-8">
+          {description}
+        </p>
+
+        <a href={cta.link} target="_blank" class="mt-16 flex items-center text-secondary">
+          {cta.text}
+          <Icon class="w-4 h-4 ml-2 stroke-secondary" />
+        </a>
+      </div>
+      <div class="flex-1">
+        <img src={thumbnail} alt={`Cr3st digital agency project ${title} thumbnail`} class="w-full" />
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style></style>

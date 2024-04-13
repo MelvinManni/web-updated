@@ -1,0 +1,61 @@
+---
+import ArrowRightIcon from "../components/SVG/ArrowRightIcon.astro";
+import ServicesLogo from "../components/SVG/ServicesLogo.astro";
+import Button from "../components/atoms/Button.astro";
+import Container from "../components/atoms/Container.astro";
+import AboutCrest from "../components/sections/AboutCrest.astro";
+import Project from "../components/sections/Project.astro";
+import Service from "../components/sections/Service.astro";
+import { PROJECTS } from "../consts";
+import Layout from "../layouts/index.astro";
+---
+
+<Layout headerBg="dark:bg-[#0C0C0C] bg-white">
+  <section class="dark:bg-[#0C0C0C] bg-white overflow-x-clip pb-64 pt-48">
+    <div class="bg-white/40 dark:bg-[#0C0C0C]/20">
+      <Container>
+        <div class="max-md:flex-col-reverse flex justify-between items-center gap-10 md:gap-20">
+          <div class="flex-1">
+            <h1 class="text-4xl sm:text-6xl dark:text-light-200 text-dark-700 font-gotham font-bold">
+              Amazing <span class="bg-logo-reverse clip-text">Features</span>
+            </h1>
+            <p class="text-lg text-dark-300 dark:text-light-700 mb-11 mt-4">
+              At CR3ST, we offer a comprehensive suite of features designed to meet your needs and exceed your
+              expectations. Explore our platform offerings and discover how we can empower your business to succeed in
+              the digital age.
+            </p>
+            <Button>
+              Hire a Service <ArrowRightIcon class="ml-2" />
+            </Button>
+          </div>
+          <div class="flex-1 relative flex justify-center items-center">
+            <div class="hero relative">
+              <ServicesLogo class="w-full relative z-10" />
+            </div>
+          </div>
+        </div>
+      </Container>
+    </div>
+  </section>
+  {PROJECTS.map((project, index) => <Service id={`PROJECTS_${project.title}_${index}`} {...project} />)}
+  <!-- <Project  /> -->
+</Layout>
+
+<style>
+  .hero::before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #ff44ec -100.22deg,
+      #ffbc7b 55.35deg,
+      #2a04e5 190.89deg,
+      #ff44ec 259.78deg,
+      #ffbc7b 415.35deg
+    );
+    filter: blur(110px);
+  }
+</style>

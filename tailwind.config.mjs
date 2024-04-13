@@ -8,6 +8,7 @@ export default {
         fadein: "fade 3s linear forwards",
       },
       borderRadius:{
+        DEFAULT: '8px',
         'lg': '10px',
       },
       boxShadow: {

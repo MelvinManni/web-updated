@@ -1,0 +1,54 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"svg">;
+
+const props = Astro.props;
+---
+
+<svg width="305" height="306" viewBox="0 0 305 306" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <rect y="0.709229" width="305" height="305" rx="90" fill="white"></rect>
+  <mask id="mask0_17_40" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="96" y="68" width="125" height="96">
+    <path d="M96.7924 91.8591H191.22L119.522 163.557H152.738L220.57 95.7293V68.3704H96.7924V91.8591Z" fill="white"
+    ></path>
+  </mask>
+  <g mask="url(#mask0_17_40)">
+    <path d="M220.964 68.3162H75.2322V238.339H220.964V68.3162Z" fill="url(#paint0_linear_17_40)"></path>
+  </g>
+  <mask id="mask1_17_40" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="83" y="136" width="138" height="103">
+    <path
+      d="M215.166 141.739L212.841 136.21L194.854 154.221L195.474 156.48C196.559 160.455 197.108 164.558 197.105 168.679V168.733C197.119 175.987 195.402 183.139 192.096 189.596C188.687 196.302 183.687 202.072 177.533 206.399C171.379 210.727 164.259 213.481 156.795 214.421C152.925 214.905 149.011 214.905 145.141 214.421C137.718 213.468 130.636 210.726 124.507 206.431C118.377 202.135 113.383 196.415 109.953 189.762L108.791 187.387H83.6672L85.6701 192.811C88.4687 200.363 92.5543 207.373 97.7457 213.53C99.0435 215.079 100.423 216.571 101.837 217.973C103.045 219.182 104.32 220.364 105.622 221.483C118.239 232.333 134.331 238.293 150.972 238.282C153.542 238.282 156.111 238.143 158.666 237.863C175.684 235.981 191.41 227.887 202.832 215.133C214.255 202.379 220.572 185.859 220.574 168.737V168.679C220.58 159.427 218.735 150.268 215.15 141.739H215.166Z"
+      fill="white"></path>
+  </mask>
+  <g mask="url(#mask1_17_40)">
+    <path d="M220.964 68.316H75.2323V238.339H220.964V68.316Z" fill="url(#paint1_linear_17_40)"></path>
+  </g>
+  <defs>
+    <linearGradient
+      id="paint0_linear_17_40"
+      x1="93.0724"
+      y1="248.64"
+      x2="203.128"
+      y2="58.0153"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0.11" stop-color="#1601E5"></stop>
+      <stop offset="0.43" stop-color="#FF29E1"></stop>
+      <stop offset="1" stop-color="#FFD36B"></stop>
+    </linearGradient>
+    <linearGradient
+      id="paint1_linear_17_40"
+      x1="93.0725"
+      y1="248.64"
+      x2="203.128"
+      y2="58.0151"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0.11" stop-color="#1601E5"></stop>
+      <stop offset="0.43" stop-color="#FF29E1"></stop>
+      <stop offset="1" stop-color="#FFD36B"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+
+<style></style>

@@ -1,6 +1,7 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
+import ArrowRightIcon from "./components/SVG/ArrowRightIcon.astro";
 import ChartIcon from "./components/SVG/ChartIcon.astro";
 import ChipIcon from "./components/SVG/ChipIcon.astro";
 import CubeIcon from "./components/SVG/CubeIcon.astro";
@@ -32,6 +33,7 @@ export const ICONS = {
   linkedin: LinkedInIcon,
   twitter: TwitterIcon,
   instagram: InstagramIcon,
+  "arrow-right": ArrowRightIcon,
 };
 
 export const SOCIAL_LINKS: {
@@ -55,3 +57,93 @@ export const SOCIAL_LINKS: {
     icon: "instagram",
   },
 ];
+
+export const PROJECTS: Projects[] = [
+  {
+    title: "Project 1",
+    thumbnail: "https://via.placeholder.com/150",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
+    cta: {
+      text: "View Project",
+      link: "/",
+    },
+  },
+  {
+    title: "Project 2",
+    thumbnail: "https://via.placeholder.com/150",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
+    cta: {
+      text: "View Project",
+      link: "/",
+    },
+  },
+  {
+    title: "Project 3",
+    thumbnail: "https://via.placeholder.com/150",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
+    cta: {
+      text: "View Project",
+      link: "/",
+    },
+  },
+  {
+    title: "Project 4",
+    thumbnail: "https://via.placeholder.com/150",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
+    cta: {
+      text: "View Project",
+      link: "/",
+    },
+  },
+  {
+    title: "Project 3",
+    thumbnail: "https://via.placeholder.com/150",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
+    cta: {
+      text: "View Project",
+      link: "/",
+    },
+  },
+  {
+    title: "Project 4",
+    thumbnail: "https://via.placeholder.com/150",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
+    cta: {
+      text: "View Project",
+      link: "/",
+    },
+  },
+  {
+    title: "Project 3",
+    thumbnail: "https://via.placeholder.com/150",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
+    cta: {
+      text: "View Project",
+      link: "/",
+    },
+  },
+  {
+    title: "Project 4",
+    thumbnail: "https://via.placeholder.com/150",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
+    cta: {
+      text: "View Project",
+      link: "/",
+    },
+  },
+];
+
+
+
+// TYPES
+
+export type Projects = {
+  title: string;
+  thumbnail: string;
+  description: string;
+  cta: {
+    text: string;
+    link: string;
+    icon?: keyof typeof ICONS;
+  };
+};
