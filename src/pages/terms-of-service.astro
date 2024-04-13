@@ -1,0 +1,148 @@
+---
+import Container from "../components/atoms/Container.astro";
+import Legals from "../components/sections/Legals.astro";
+import Layout from "../layouts/index.astro";
+---
+
+<Layout>
+  <section>
+    <Container class="pt-28">
+      <h1 class="text-3xl sm:text-6xl dark:text-light-300 text-primary-900 mb-12 font-bold font-gotham">
+        Terms of Service
+      </h1>
+      <h4 class="sm:text-3xl dark:text-light-200 text-dark-500 mb-4 font-medium font-gotham">Nigeria</h4>
+
+      <div class="w-full border-t pt-6 border-light-500/20 dark:border-dark-300/20">
+        <p class="text-sm sm:text-xl text-dark-100">Last updated: 14 April 2024</p>
+      </div>
+    </Container>
+  </section>
+  <Legals class="mt-8" heading="Introduction">
+    <p>
+      Welcome to CR3ST Digital Agency. By accessing or using our services, you agree to comply with and be bound by the
+      following terms and conditions of use. Please read these terms carefully before accessing or using our website.
+    </p>
+  </Legals>
+  <Legals class="mt-8" heading="Services Offered">
+    <p>CR3ST Digital Agency specializes in providing a range of digital services, including but not limited to:</p>
+    <ul class="mt-2">
+      <li>Web Development</li>
+      <li>Mobile App Development</li>
+      <li>ERP Solution & Business Automation</li>
+      <li>Branding</li>
+      <li>Digital Marketing</li>
+      <li>SEO</li>
+      <li>Graphics, User Interface and Motion Design</li>
+      <li>3D Design</li>
+    </ul>
+  </Legals>
+  <Legals class="mt-8" heading="Intellectual Property">
+    <p>
+      All intellectual property rights related to the services provided by Cr3st, including but not limited to patents,
+      copyrights, trademarks, and trade secrets, remain the exclusive property of Cr3st unless otherwise specified in
+      writing.
+    </p>
+  </Legals>
+
+  <Legals class="mt-8" heading="Marketing and Advertising Rights">
+    <p>
+      By employing our services you acknowledges and grants CR3ST Digital Agency Ltd the non-exclusive, worldwide,
+      royalty-free right and license to use, adapt, publish, translate, create derivative works from, distribute,
+      perform, and display the Order solely for marketing and advertising the Company's services. The rights granted
+      herein shall include the right to use the materials in any media or format now known or hereafter developed,
+      including, but not limited to, print, digital, and online media.
+    </p>
+    <p>
+      You acknowledges that the rights granted herein apply only to materials that are non-confidential and have been
+      made public by the Client. Any confidential materials shall not be subject to this Agreement.
+    </p>
+    <p>
+      The materials shall remain the exclusive property of the Client, and the Company acknowledges and respects the
+      Client's ownership rights.
+    </p>
+  </Legals>
+
+  <Legals class="mt-8" heading="Permanent Banner Placement for Softwares Developed">
+    <p>
+      The Company shall permanently place a banner, signifying that the Client application was built by CR3ST Digital
+      Agency Ltd, at the bottom of every web application and on the splash screen for mobile applications. The banner
+      shall have a maximum height of 200 pixels and will link to the Company&apos;s website.
+    </p>
+    <p>
+      he banner placement shall be exclusive to the Company and shall remain on the Client's web page or application
+      indefinitely. The Client agrees not to allow any other entity or party to display banners or advertisements in the
+      designated areas.
+    </p>
+    <p>
+      The Client shall not incur any additional fees for placing the banner. However, if the Client wishes to remove the
+      banner from their webpage or application, they shall be required to pay an additional fee as specified by the
+      Company.
+    </p>
+    <p>
+      The Client acknowledges that the banner is a standard part of the Company's branding and marketing efforts and
+      agrees to allow its placement on their webpage or application. The Client shall ensure that the banner remains
+      visible and unaltered, except as permitted by the Company.
+    </p>
+    <p>
+      The Company reserves the right to modify the banner's design at any time, provided that such modifications do not
+      materially affect the functionality or appearance of the Client's web page or application. Any significant changes
+      to the banner shall be communicated to the Client in advance.
+    </p>
+  </Legals>
+  <Legals class="mt-8" heading="Links to Other Websites">
+    <p>
+      Our website may contain links to third-party websites that are not owned or controlled by CR3ST Digital Agency. We
+      have no control over, and assume no responsibility for, the content, privacy policies, or practices of any
+      third-party websites. You acknowledge and agree that CR3ST Digital Agency shall not be responsible or liable,
+      directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of
+      or reliance on any such content, goods, or services available on or through any third-party websites.
+    </p>
+  </Legals>
+
+  <Legals class="mt-8" heading="Privacy Policy">
+    <p>
+      Please refer to our <a href="/privacy-policy" class="text-secondary">Privacy Policy</a> to understand how we collect,
+      use, and protect your personal information.
+    </p>
+  </Legals>
+  <Legals class="mt-8" heading="Limitation of Liability">
+    <p>
+      In no event shall CR3ST Digital Agency, nor any of its officers, directors, employees, or agents, be liable to you
+      for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or in connection
+      with your use of or inability to use the website or any content posted on the website.
+    </p>
+  </Legals>
+  <Legals class="mt-8" heading="Indemnification">
+    <p>
+      In no event shall CR3ST Digital Agency, nor any of its officers, directors, employees, or agents, be liable to you
+      for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or in connection
+      with your use of or inability to use the website or any content posted on the website.
+    </p>
+  </Legals>
+
+  <Legals class="mt-8" heading="Changes to Terms ">
+    <p>
+      CR3ST Digital Agency reserves the right to modify or revise these terms of service at any time, without prior
+      notice. By employing our services, you agree to be bound by the current version of these terms and conditions.
+    </p>
+  </Legals>
+  <Legals class="mt-10">
+    <p>
+      If you have any questions or concerns about these terms of service, please contact us at <a
+        href="mailto:info@cr3st.com"
+        class="text-secondary">info@cr3st.com</a
+      >.
+    </p>
+  </Legals>
+
+  <div class="mb-64"></div>
+</Layout>
+<style>
+  li {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+  a {
+    display: inline;
+  }
+</style>

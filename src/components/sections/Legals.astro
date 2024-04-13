@@ -1,0 +1,23 @@
+---
+import Container from "../atoms/Container.astro";
+
+type Props = {
+  heading?: string;
+  subheading?: string;
+  class?: string;
+};
+
+const { heading, subheading, class: className } = Astro.props;
+---
+
+<section class={className}>
+  <Container>
+    {heading && <h4 class="text-2xl text-primary-900 dark:text-light-200 mb-4 font-gotham font-medium">{heading}</h4>}
+    {subheading && <h5 class="max-sm:text-sm text-primary-900 dark:text-light-200 mb-2 font-medium">{subheading}</h5>}
+    <div class="max-sm:text-sm dark:text-dark-100 text-dark-400 flex flex-col gap-2">
+      <slot />
+    </div>
+  </Container>
+</section>
+
+<style></style>
