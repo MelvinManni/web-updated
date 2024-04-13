@@ -18,6 +18,7 @@ import Input from "../components/atoms/Input.astro";
 import TextArea from "../components/atoms/TextArea.astro";
 import SolutionsCard from "../components/SolutionsCard.astro";
 import AboutCrest from "../components/sections/AboutCrest.astro";
+import Count from "../components/Count.astro";
 ---
 
 <Layout>
@@ -47,31 +48,11 @@ import AboutCrest from "../components/sections/AboutCrest.astro";
   </section>
   <section>
     <Container>
-      <div class="grid grid-cols-2 xl:grid-cols-4 gap-8">
-        <div class="pb-10 p pt-20">
-          <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
-            <h3 class="text-lg sm:text-4xl font-bold">10+</h3>
-            <p class="text-xs sm:text-lg">Projects</p>
-          </div>
-        </div>
-        <div class="pb-10 p pt-20">
-          <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
-            <h3 class="text-lg sm:text-4xl font-bold">6+</h3>
-            <p class="text-xs sm:text-lg">Happy Clients</p>
-          </div>
-        </div>
-        <div class="pb-10 p pt-20">
-          <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
-            <h3 class="text-lg sm:text-4xl font-bold">20+</h3>
-            <p class="text-xs sm:text-lg">Designs completed</p>
-          </div>
-        </div>
-        <div class="pb-10 p pt-20">
-          <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
-            <h3 class="text-lg sm:text-4xl font-bold">10+</h3>
-            <p class="text-xs sm:text-lg">Service Offerings</p>
-          </div>
-        </div>
+      <div class="grid grid-cols-2 xl:grid-cols-4 gap-x-8 sm:gap-8">
+        <Count count={10} text="Projects" />
+        <Count count={6} text="Happy Clients" />
+        <Count count={20} text="Designs Completed" />
+        <Count count={10} text="Service Offerings" />
       </div>
     </Container>
   </section>

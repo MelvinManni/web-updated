@@ -1,0 +1,17 @@
+---
+type Props = {
+  count: number;
+  text: string;
+};
+
+const { count, text } = Astro.props;
+---
+
+<div class="pb-5 pt-10 sm:pb-10 sm:pt-20">
+  <div class="border-l-2 border-primary-600 pl-4 dark:text-light-300 text-dark-600 font-inter">
+    <h3 class="text-lg sm:text-4xl font-bold">{count}+</h3>
+    <p class="text-xs sm:text-lg">{text}</p>
+  </div>
+</div>
+
+<style></style>
