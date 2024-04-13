@@ -17,6 +17,7 @@ import CheckIcon from "../components/SVG/CheckIcon.astro";
 import Input from "../components/atoms/Input.astro";
 import TextArea from "../components/atoms/TextArea.astro";
 import SolutionsCard from "../components/SolutionsCard.astro";
+import AboutCrest from "../components/sections/AboutCrest.astro";
 ---
 
 <Layout>
@@ -81,7 +82,7 @@ import SolutionsCard from "../components/SolutionsCard.astro";
         Custom Solutions, <br /> Tailored for You!
       </h2>
 
-      <div class="md:w-9/12 mx-auto mt-16 relative z-10">
+      <div class="lg:w-9/12 mx-auto mt-16 relative z-10">
         <div class="grid md:grid-cols-2 gap-8">
           <div class="flex flex-col gap-8">
             <SolutionsCard
@@ -112,26 +113,7 @@ import SolutionsCard from "../components/SolutionsCard.astro";
       <Logo class="md:w-64 w-36 absolute opacity-10 -left-32 bottom-40 dark:fill-white fill-secondary" />
     </Container>
   </section>
-  <section>
-    <Container class="pb-32 pt-0 relative overflow-hidden">
-      <div class="grid md:grid-cols-2 gap-10 md:gap-48 items-center relative z-10">
-        <div class="flex flex-col gap-8">
-          <h2 class="text-4xl sm:text-5xl font-bold clip-text bg-logo font-gotham">About CR3ST</h2>
-          <p class="max-sm:text-sm dark:text-dark-50 text-dark-600 font-jarkata">
-            At CR3ST, innovation is at the heart of everything we do. With a passion for excellence and a dedication to
-            our clients' success, we bring together a team of experts from diverse backgrounds to deliver cutting-edge
-            solutions that drive tangible results.
-          </p>
-          <Button class="w-fit">Get Started! <ArrowRightIcon class="ml-2" /> </Button>
-        </div>
-        <div>
-          <img src="/images/about-dark.png" alt="Cr3st: About us" class="w-full hidden dark:block" />
-          <img src="/images/about-light.png" alt="Cr3st: About us" class="w-full dark:hidden" />
-        </div>
-      </div>
-      <Logo class="md:w-64 w-36 absolute opacity-10 right-2 -bottom-6 dark:fill-white fill-secondary" />
-    </Container>
-  </section>
+  <AboutCrest />
   <section class={SECONDARY_BG}>
     <Container class="pb-32 pt-24">
       <h2 class="text-2xl sm:text-4xl font-medium dark:text-light-200 text-dark-600 text-center font-gotham">
@@ -229,7 +211,9 @@ import SolutionsCard from "../components/SolutionsCard.astro";
       <div class="grid md:grid-cols-2 gap-28">
         <div class="flex max-md:flex-col gap-36">
           <div class="flex flex-col gap-16 justify-between pt-10">
-            <p class="text-sm font-bold clip-text bg-logo-reverse uppercase w-fit max-md:mx-auto max-md:text-center">Have a project in mind?</p>
+            <p class="text-sm font-bold clip-text bg-logo-reverse uppercase w-fit max-md:mx-auto max-md:text-center">
+              Have a project in mind?
+            </p>
             <div>
               <h1 class="max-md:text-center text-4xl sm:text-6xl font-bold text-dark-700 dark:text-light-200">
                 Ready to Get Started?
