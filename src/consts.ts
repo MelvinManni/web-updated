@@ -86,43 +86,31 @@ export const SERVICES: Service[] = [
   {
     title: "User Interface & Experience Design",
     description:
-      "",
+      "Unlock seamless user experiences and visually captivating interfaces tailored to your unique business needs and user preferences; our designs blend functionality with flair to elevate your digital presence.",
     thumbnail: "/images/services/3.webp",
   },
   {
     title: "Digital Marketing Solutions",
     thumbnail: "/images/services/2.webp",
     description:
-      "Maximize your online presence and drive results with our strategic digital marketing solutions. From search engine optimization (SEO) to social media management, we help you connect with your target audience and achieve measurable success.",
+      "Maximize your online presence and drive results with strategic digital marketing solutions. From search engine optimization (SEO) to social media management, helping you connect with your target audience and achieve measurable success.",
   },
   {
     title: "Consulting Services",
     description:
-      "Gain valuable insights and strategic guidance from our experienced consultants. Whether you're launching a new project or seeking to optimize existing processes, we're here to support your success every step of the way.",
-    thumbnail: "/images/services/3.webp",
-  },
-  {
-    title: "Consulting Services",
-    description:
-      "Gain valuable insights and strategic guidance from our experienced consultants. Whether you're launching a new project or seeking to optimize existing processes, we're here to support your success every step of the way.",
+      "Gain valuable insights and strategic guidance from experienced consultants. Whether you're launching a new project or seeking to optimize existing processes, we're here to support your success every step of the way.",
     thumbnail: "/images/services/3.webp",
   },
   {
     title: "ERP Solutions & Business Automation",
     description:
-      "",
+      "Experience cost savings, enhanced productivity, and seamless workflow with custom software solutions from CR3ST. Our tailored software development services are designed to make your work faster, easier, and more efficient.",
     thumbnail: "/images/services/3.webp",
   },
   {
-    title: "Branding ",
+    title: "Branding & Creative Services",
     description:
-      "",
-    thumbnail: "/images/services/3.webp",
-  },
-  {
-    title: "Motion Graphics & Animation",
-    description:
-      "",
+      "Crafting your brand's voice and visual identity is crucial. From typography to logo design, we capture your essence, ensuring your brand resonates authentically and illustrating what your organization truly stands for.",
     thumbnail: "/images/services/3.webp",
   },
 ];
