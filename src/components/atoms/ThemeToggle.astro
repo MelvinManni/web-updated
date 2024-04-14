@@ -37,6 +37,7 @@ import SunIcon from "../SVG/SunIcon.astro";
     document.getElementById("toggle-theme")?.addEventListener("click", togglePreference);
   </script>
   <button
+    aria-label="Theme toggle"
     id="toggle-theme"
     class:list={[
       "border border-dark-100/50 rounded-full px-3 py-3 w-24 h-[50px] flex gap-5 relative items-center group light bg-page",
