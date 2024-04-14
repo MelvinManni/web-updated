@@ -14,7 +14,7 @@ import Layout from "../layouts/index.astro";
         <div class="hero flex justify-center items-center w-full">
           <div class="w-full py-64 max-md:pt-28 max-md:pb-36 bg-page/90 relative z-10">
             <div>
-              <div class="text-center mt-20 font-gotham">
+              <div class="text-center mt-20 font-gotham image-showcase">
                 <h1 class="sm:text-7xl text-4xl font-bold text-[#141414] dark:text-white">Our Projects</h1>
                 <div class="flex overflow-x-scroll justify-center mt-16 no-scrollbar max-md:hidden">
                   {
@@ -83,5 +83,11 @@ import Layout from "../layouts/index.astro";
       #ffbc7b 415.35deg
     );
     filter: blur(110px);
+  }
+  .image-showcase > div {
+    width: 100%;
+  }
+  .image-showcase img{
+    max-width: 300px;
   }
 </style>

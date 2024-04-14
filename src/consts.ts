@@ -60,80 +60,16 @@ export const SOCIAL_LINKS: {
 
 export const PROJECTS: Projects[] = [
   {
-    title: "Project 1",
-    thumbnail: "https://via.placeholder.com/150",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
+    title: "African Heritage Awards",
+    thumbnail: "/images/projects/1.webp",
+    description:
+      "Discover CR3ST's impactful landing page for the AfriHeritage Awards. Celebrating African innovators and entrepreneurs, our design captures the essence of driving Africa towards greatness. Dive into our showcase to see how we bring visions to life.",
     cta: {
       text: "View Project",
-      link: "/",
-    },
-  },
-  {
-    title: "Project 2",
-    thumbnail: "https://via.placeholder.com/150",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
-    cta: {
-      text: "View Project",
-      link: "/",
-    },
-  },
-  {
-    title: "Project 3",
-    thumbnail: "https://via.placeholder.com/150",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
-    cta: {
-      text: "View Project",
-      link: "/",
-    },
-  },
-  {
-    title: "Project 4",
-    thumbnail: "https://via.placeholder.com/150",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
-    cta: {
-      text: "View Project",
-      link: "/",
-    },
-  },
-  {
-    title: "Project 3",
-    thumbnail: "https://via.placeholder.com/150",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
-    cta: {
-      text: "View Project",
-      link: "/",
-    },
-  },
-  {
-    title: "Project 4",
-    thumbnail: "https://via.placeholder.com/150",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
-    cta: {
-      text: "View Project",
-      link: "/",
-    },
-  },
-  {
-    title: "Project 3",
-    thumbnail: "https://via.placeholder.com/150",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
-    cta: {
-      text: "View Project",
-      link: "/",
-    },
-  },
-  {
-    title: "Project 4",
-    thumbnail: "https://via.placeholder.com/150",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, purus nec luctus.",
-    cta: {
-      text: "View Project",
-      link: "/",
+      link: "https://www.afriheritageawards.com/",
     },
   },
 ];
-
-
 
 // TYPES
 
