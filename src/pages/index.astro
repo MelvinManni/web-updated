@@ -167,7 +167,9 @@ import Count from "../components/Count.astro";
           <h1 class="text-3xl sm:text-5xl font-bold text-dark-700 font-gotham dark:text-light-200 mb-4">
             Unlock Your Potential with <span class="bg-logo clip-text">CR3ST</span>'s Innovative Solutions
           </h1>
-          <Button> Contact Us </Button>
+          <a href="#contact-us">
+            <Button> Contact Us </Button>
+          </a>
         </div>
 
         <div class="flex max-md:flex-col gap-24">
@@ -213,12 +215,12 @@ import Count from "../components/Count.astro";
             <p class="font-gotham font-medium text-xl dark:text-gray-200 text-dark-400">
               Let us know about your project & we will help you grow your business from scratch.
             </p>
-            <form action="https://formspree.io/f/xoqgpyyk" method="post">
+            <form action="https://formspree.io/f/xoqgpyyk" method="post" id="contact-us">
               <div class="flex flex-col gap-4 mt-8 mb-6">
-                <Input name="Full Name" type="text" placeholder="Your Name" />
-                <Input name="Email" type="email" placeholder="Your Email" />
+                <Input required name="Full Name" type="text" placeholder="Your Name" />
+                <Input required name="Email" type="email" placeholder="Your Email" />
                 <Input name="Phone Number" type="text" placeholder="Your Phone" />
-                <TextArea name="Message" placeholder="Your Message" />
+                <TextArea required name="Message" placeholder="Your Message" />
               </div>
               <div class="bg-button_border rounded p-px w-fit h-fit">
                 <Button class="bg-none dark:bg-none bg-light-50 dark:bg-black font-dm-sans font-bold">

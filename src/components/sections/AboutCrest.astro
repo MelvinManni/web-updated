@@ -3,12 +3,11 @@ import ArrowRightIcon from "../SVG/ArrowRightIcon.astro";
 import Logo from "../SVG/Logo.astro";
 import Button from "../atoms/Button.astro";
 import Container from "../atoms/Container.astro";
- type Props = {
-    class?: string
- }
+type Props = {
+  class?: string;
+};
 
 const { class: className }: Props = Astro.props;
-
 ---
 
 <section class={className}>
@@ -21,7 +20,9 @@ const { class: className }: Props = Astro.props;
           our clients' success, we bring together a team of experts from diverse backgrounds to deliver cutting-edge
           solutions that drive tangible results.
         </p>
-        <Button class="w-fit">Get Started! <ArrowRightIcon class="ml-2" /> </Button>
+        <a href="http://https://tally.so/r/w48eBo" target="_blank" rel="noopener Cr3st Digital Agency">
+          <Button class="w-fit">Get Started! <ArrowRightIcon class="ml-2" /> </Button>
+        </a>
       </div>
       <div>
         <img src="/images/about-dark.png" alt="Cr3st: About us" class="w-full hidden dark:block" />
