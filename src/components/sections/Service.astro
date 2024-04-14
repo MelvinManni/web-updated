@@ -1,13 +1,9 @@
 ---
-import { type Projects, ICONS } from "../../consts";
+import { ICONS, type Service } from "../../consts";
 import Button from "../atoms/Button.astro";
 import Container from "../atoms/Container.astro";
 
-type Props = Omit<Projects, "cta"> & {
-  id?: string;
-  microcopy?: string;
-  cta?: Projects["cta"];
-};
+type Props = Service;
 
 const { title, description, cta, id, thumbnail, microcopy }: Props = Astro.props;
 
@@ -35,7 +31,7 @@ const Icon = cta?.icon ? ICONS[cta.icon] : undefined;
           cta && (
             <a href={cta?.link} target="_blank" >
               <div class="bg-button_border rounded p-px w-fit h-fit">
-                <Button class="bg-none dark:bg-none bg-light-50 dark:bg-black font-dm-sans font-bold">
+                <Button class="bg-none dark:bg-none dark:group-odd:bg-[#040404] group-odd:bg-[#F9FAFB] bg-page font-dm-sans font-bold">
                   <span class=" text-primary-900 dark:text-white">
                     {cta?.text}
                     {Icon && <Icon />}

@@ -63,11 +63,67 @@ export const PROJECTS: Projects[] = [
     title: "African Heritage Awards",
     thumbnail: "/images/projects/1.webp",
     description:
-      "Discover CR3ST's impactful landing page for the AfriHeritage Awards. Celebrating African innovators and entrepreneurs, our design captures the essence of driving Africa towards greatness. Dive into our showcase to see how we bring visions to life.",
+      "Discover CR3ST's impactful landing page for the AfriHeritage Awards. Celebrating African innovators and entrepreneurs, our design captures the essence of driving Africa towards greatness.",
     cta: {
       text: "View Project",
       link: "https://www.afriheritageawards.com/",
     },
+  },
+];
+
+export const SERVICES: Service[] = [
+  {
+    microcopy: "Level up fast",
+    title: "Custom Software Development",
+    thumbnail: "/images/services/1.webp",
+    description:
+      "From concept to deployment, our expert team crafts custom software solutions tailored to your unique requirements. Whether you need a scalable web application or a powerful mobile app, we have the expertise to bring your vision to life.",
+    cta: {
+      text: "Learn More",
+      link: "mailto:info@cr3st.com",
+    },
+  },
+  {
+    title: "User Interface & Experience Design",
+    description:
+      "",
+    thumbnail: "/images/services/3.webp",
+  },
+  {
+    title: "Digital Marketing Solutions",
+    thumbnail: "/images/services/2.webp",
+    description:
+      "Maximize your online presence and drive results with our strategic digital marketing solutions. From search engine optimization (SEO) to social media management, we help you connect with your target audience and achieve measurable success.",
+  },
+  {
+    title: "Consulting Services",
+    description:
+      "Gain valuable insights and strategic guidance from our experienced consultants. Whether you're launching a new project or seeking to optimize existing processes, we're here to support your success every step of the way.",
+    thumbnail: "/images/services/3.webp",
+  },
+  {
+    title: "Consulting Services",
+    description:
+      "Gain valuable insights and strategic guidance from our experienced consultants. Whether you're launching a new project or seeking to optimize existing processes, we're here to support your success every step of the way.",
+    thumbnail: "/images/services/3.webp",
+  },
+  {
+    title: "ERP Solutions & Business Automation",
+    description:
+      "",
+    thumbnail: "/images/services/3.webp",
+  },
+  {
+    title: "Branding ",
+    description:
+      "",
+    thumbnail: "/images/services/3.webp",
+  },
+  {
+    title: "Motion Graphics & Animation",
+    description:
+      "",
+    thumbnail: "/images/services/3.webp",
   },
 ];
 
@@ -82,4 +138,13 @@ export type Projects = {
     link: string;
     icon?: keyof typeof ICONS;
   };
+};
+
+export type Service = {
+  title: string;
+  description: string;
+  thumbnail: string;
+  id?: string;
+  microcopy?: string;
+  cta?: Projects["cta"];
 };

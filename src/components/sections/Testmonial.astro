@@ -1,0 +1,74 @@
+---
+import { SECONDARY_BG } from "../../consts";
+import Container from "../atoms/Container.astro";
+import Carousel from "../carousel/Carousel.astro";
+
+
+---
+
+<section class={SECONDARY_BG}>
+  <Container class="pb-32 pt-24">
+    <h2 class="text-2xl sm:text-4xl font-medium dark:text-light-200 text-dark-600 text-center font-gotham">
+      What Our Clients Say
+    </h2>
+
+    <div class="mt-28">
+      <Carousel
+        items={[
+          {
+            src: "/images/testmonial-1.png",
+            message:
+              "CR3ST was instrumental in our success. Their attention to detail and commitment to excellence surpassed our expectations.",
+            name: "Jane Smith",
+            title: "CEO XYZ Company",
+          },
+
+          {
+            src: "/images/testmonial-2.png",
+            message:
+              "CR3ST understands our vision and consistently delivers innovative solutions. They are a trusted partner we can rely on.",
+            name: "Jane Smith",
+            title: "CEO XYZ Company",
+          },
+
+          {
+            src: "/images/testmonial-1.png",
+            message: "",
+            name: "Jane Smith",
+            title: "CEO XYZ Company",
+          },
+
+          {
+            src: "/images/testmonial-2.png",
+            message: "",
+            name: "Jane Smith",
+            title: "CEO XYZ Company",
+          },
+          {
+            src: "/images/testmonial-1.png",
+            message:
+              "CR3ST was instrumental in our success. Their attention to detail and commitment to excellence surpassed our expectations.",
+            name: "Jane Smith",
+            title: "CEO XYZ Company",
+          },
+
+          {
+            src: "/images/testmonial-2.png",
+            message:
+              "CR3ST understands our vision and consistently delivers innovative solutions. They are a trusted partner we can rely on.",
+            name: "Jane Smith",
+            title: "CEO XYZ Company",
+          },
+          {
+            src: "/images/testmonial-2.png",
+            message: "",
+            name: "Jane Smith",
+            title: "CEO XYZ Company",
+          },
+        ]}
+      />
+    </div>
+  </Container>
+</section>
+
+<style></style>
