@@ -5,6 +5,8 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import storyblok from "@storyblok/astro";
 import { loadEnv } from "vite";
+import sitemap from '@astrojs/sitemap';
+
 
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 
