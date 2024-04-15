@@ -97,20 +97,16 @@ const { items } = Astro.props;
 
   let currentIndex = 0;
   let slideDistance = 50;
-  let viewScreen = 2;
 
   if (window.screen.width < 768) {
     slideDistance = 100;
-    viewScreen = 1;
   }
 
   window.addEventListener("resize", () => {
     if (window.screen.width < 768) {
       slideDistance = 100;
-      viewScreen = 1;
     } else {
       slideDistance = 50;
-      viewScreen = 2;
     }
   });
 

@@ -1,10 +1,8 @@
 ---
-import BlogPost from "../../layouts/BlogPost.astro";
 import { useStoryblokApi, renderRichText } from "@storyblok/astro";
 import Layout from "../../layouts/index.astro";
 import Container from "../../components/atoms/Container.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
-import BaseHead from "../../components/BaseHead.astro";
 
 export async function getStaticPaths() {
   const storyBlokApi = useStoryblokApi();
@@ -23,7 +21,6 @@ export async function getStaticPaths() {
   return paths.flatMap((path) => path);
 }
 
-type Props = {};
 const slug = (Astro.params as any).slug;
 const storyBlokApi = useStoryblokApi();
 const {
@@ -36,7 +33,7 @@ const content = story.content;
 const renderedRichText = renderRichText(content.body);
 ---
 
-<Layout title={content.title} description={content.summary}>
+<Layout title={content.title} description={content.summary} cover={content.cover}>
   <Container class="max-w-[1080px] pt-14 pb-32">
     <img src={content.cover} alt={content.title} class="w-full mx-auto rounded-lg" />
 

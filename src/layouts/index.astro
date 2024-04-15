@@ -8,15 +8,16 @@ type Props = {
   headerBg?: string;
   title?: string;
   description?: string;
+  cover?: string;
 };
 
-const { headerBg, title, description }: Props = Astro.props;
+const { headerBg, title, description, cover }: Props = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead description={description ?? SITE_DESCRIPTION} title={title ?? SITE_TITLE} />
+    <BaseHead description={description ?? SITE_DESCRIPTION} title={title ?? SITE_TITLE} image={cover} />
   </head>
   <body class="min-h-screen flex flex-col overflow-x-hidden">
     <Header bg={headerBg} />
