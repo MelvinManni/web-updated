@@ -49,3 +49,15 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = "/cover.webp
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.site)} />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-92DE7J4XZW"></script>
+<script lang="js">
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-92DE7J4XZW");
+</script>
