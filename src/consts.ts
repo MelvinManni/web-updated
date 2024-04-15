@@ -74,7 +74,7 @@ export const PROJECTS: Projects[] = [
 export const SERVICES: Service[] = [
   {
     microcopy: "Level up fast",
-    title: "Custom Software Development",
+    title: "Software Development",
     thumbnail: "/images/services/1.webp",
     description:
       "From concept to deployment, our expert team crafts custom software solutions tailored to your unique requirements. Whether you need a scalable web application or a powerful mobile app, we have the expertise to bring your vision to life.",
@@ -84,6 +84,7 @@ export const SERVICES: Service[] = [
     },
   },
   {
+    microcopy: "Make an impression",
     title: "User Interface & Experience Design",
     description:
       "Unlock seamless user experiences and visually captivating interfaces tailored to your unique business needs and user preferences; our designs blend functionality with flair to elevate your digital presence.",
@@ -97,22 +98,25 @@ export const SERVICES: Service[] = [
     thumbnail: "/images/services/3.webp",
   },
   {
+    microcopy: "Get found",
     title: "Digital Marketing Solutions",
     thumbnail: "/images/services/4.webp",
     description:
       "Maximize your online presence and drive results with strategic digital marketing solutions. From search engine optimization (SEO) to social media management, helping you connect with your target audience and achieve measurable success.",
   },
   {
-    title: "Consulting Services",
-    description:
-      "Gain valuable insights and strategic guidance from experienced consultants. Whether you're launching a new project or seeking to optimize existing processes, we're here to support your success every step of the way.",
-    thumbnail: "/images/services/5.webp",
-  },
-  {
+    microcopy: "Stay ahead",
     title: "ERP Solutions & Business Automation",
     description:
       "Experience cost savings, enhanced productivity, and seamless workflow with custom software solutions from CR3ST. Our tailored software development services are designed to make your work faster, easier, and more efficient.",
     thumbnail: "/images/services/6.webp",
+  },
+  {
+    microcopy: "Get expert advice",
+    title: "Consulting Services",
+    description:
+      "Gain valuable insights and strategic guidance from experienced consultants. Whether you're launching a new project or seeking to optimize existing processes, we're here to support your success every step of the way.",
+    thumbnail: "/images/services/5.webp",
   },
 ];
 
