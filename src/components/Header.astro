@@ -23,7 +23,7 @@ const { bg }: Props = Astro.props;
         </a>
         <div class="flex items-center gap-8 menu max-md:bg-page" id="menu">
           <button aria-label="close mobile menu" id="btn-close-menu" class="md:hidden absolute right-5 top-5">
-            <CloseIcon class="w-11 h-11" />
+            <CloseIcon class="w-11 h-11 dark:text-white text-dark-700" />
           </button>
           <HeaderLink href="/about">About</HeaderLink>
           <HeaderLink href="/projects">Projects</HeaderLink>
@@ -34,7 +34,7 @@ const { bg }: Props = Astro.props;
 
       <div class="flex items-center">
         <button aria-label="open mobile menu" id="btn-open-menu" class="md:hidden">
-          <MenuIcon class="w-11 h-full" />
+          <MenuIcon class="w-11 h-full dark:text-white text-dark-700" />
         </button>
         <a
           aria-label="employ cr3st services form"
@@ -92,7 +92,7 @@ const { bg }: Props = Astro.props;
         align-items: center;
         width: 100%;
         z-index: 2000;
-        transition: 1.3s ease all;
+        transition: 1s ease all;
         overflow-y: auto;
         padding: 80px 32px 0 32px;
       }
