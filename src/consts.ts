@@ -6,8 +6,11 @@ import ChartIcon from "./components/SVG/ChartIcon.astro";
 import ChipIcon from "./components/SVG/ChipIcon.astro";
 import CubeIcon from "./components/SVG/CubeIcon.astro";
 import EmojiHappyIcon from "./components/SVG/EmojiHappyIcon.astro";
+import FacebookIcon from "./components/SVG/FacebookIcon.astro";
+import GithubIcon from "./components/SVG/GithubIcon.astro";
 import InstagramIcon from "./components/SVG/InstagramIcon.astro";
 import LinkedInIcon from "./components/SVG/LinkedInIcon.astro";
+import TikTokIcon from "./components/SVG/TikTokIcon.astro";
 import TwitterIcon from "./components/SVG/TwitterIcon.astro";
 
 export const SITE_TITLE = "CR3ST Digital Agency";
@@ -33,6 +36,9 @@ export const ICONS = {
   linkedin: LinkedInIcon,
   twitter: TwitterIcon,
   instagram: InstagramIcon,
+  facebook: FacebookIcon,
+  github: GithubIcon,
+  tiktok: TikTokIcon,
   "arrow-right": ArrowRightIcon,
 };
 
@@ -47,6 +53,11 @@ export const SOCIAL_LINKS: {
     icon: "linkedin",
   },
   {
+    name: "Facebook",
+    url: "https://www.facebook.com/people/Cr3st-Digital-Agency/61558408779400/",
+    icon: "facebook",
+  },
+  {
     name: "Twitter",
     url: "https://twitter.com/Cr3st_Digital",
     icon: "twitter",
@@ -55,6 +66,11 @@ export const SOCIAL_LINKS: {
     name: "Instagram",
     url: "https://www.instagram.com/cr3st.digital/",
     icon: "instagram",
+  },
+  {
+    name: "TikTok",
+    url: "https://www.tiktok.com/@cr3st.digital?",
+    icon: "tiktok",
   },
 ];
 

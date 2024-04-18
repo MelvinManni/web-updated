@@ -3,6 +3,7 @@ import { useStoryblokApi, renderRichText } from "@storyblok/astro";
 import Layout from "../../layouts/index.astro";
 import Container from "../../components/atoms/Container.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
+import TwitterIcon from "../../components/SVG/TwitterIcon.astro";
 
 export async function getStaticPaths() {
   const storyBlokApi = useStoryblokApi();
@@ -38,7 +39,18 @@ const renderedRichText = renderRichText(content.body);
     <img src={content.cover} alt={content.title} class="w-full mx-auto rounded-lg" />
 
     <div class="mt-4 mb-3 flex flex-col dark:text-light-400 text-dark-500 font-medium items-start">
-      <p class="text-lg font-bold">{content.author}</p>
+      <div>
+        <p class="text-lg font-bold">{content.author}</p>
+        <div class="mt-2 flex gap-2 items-center">
+          {
+            content.twitter && (
+              <a href={content.twitter}>
+                <TwitterIcon />
+              </a>
+            )
+          }
+        </div>
+      </div>
       <FormattedDate date={new Date(story.published_at ?? story.first_published_at ?? content.date)} />
     </div>
 

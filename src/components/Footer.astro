@@ -23,13 +23,13 @@ const today = new Date();
         </p>
       </div>
       <div class="flex flex-col-reverse lg:flex-col gap-6">
-        <div class="flex gap-8 social justify-center max-lg:my-4 lg:justify-end">
+        <div class="flex gap-4 items-end social justify-center max-lg:my-4 lg:justify-end">
           {
             SOCIAL_LINKS.map(({ name, url, icon }) => {
               const Icon = ICONS[icon];
               return (
-                <a href={url} aria-label={name} target="_blank" class="text-gray-50 hover:text-tertiary-500 ">
-                  <Icon />
+                <a href={url} aria-label={name} target="_blank" class="text-gray-50 hover:text-tertiary-500">
+                    <Icon class="w-7" />
                 </a>
               );
             })
