@@ -41,7 +41,7 @@ const renderedRichText = renderRichText(content.body);
 
     <div class="mt-4 mb-3 flex flex-col dark:text-light-400 text-dark-500 font-medium items-start">
       <div>
-        <p class="text-lg font-bold">{content.author}</p>
+        <p class="text-lg font-bold">{content.author ?? "CR3ST Content Team"}</p>
         <div class="mt-2 flex gap-2 items-end">
           {
             content.twitter && (
