@@ -4,6 +4,7 @@ import Layout from "../../layouts/index.astro";
 import Container from "../../components/atoms/Container.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import TwitterIcon from "../../components/SVG/TwitterIcon.astro";
+import GithubIcon from "../../components/SVG/GithubIcon.astro";
 
 export async function getStaticPaths() {
   const storyBlokApi = useStoryblokApi();
@@ -41,11 +42,18 @@ const renderedRichText = renderRichText(content.body);
     <div class="mt-4 mb-3 flex flex-col dark:text-light-400 text-dark-500 font-medium items-start">
       <div>
         <p class="text-lg font-bold">{content.author}</p>
-        <div class="mt-2 flex gap-2 items-center">
+        <div class="mt-2 flex gap-2 items-end">
           {
             content.twitter && (
               <a href={content.twitter}>
-                <TwitterIcon />
+                <TwitterIcon class="w-4" />
+              </a>
+            )
+          }
+          {
+            content.github && (
+              <a href={content.github}>
+                <GithubIcon class="w-4" />
               </a>
             )
           }
