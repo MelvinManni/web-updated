@@ -1,6 +1,5 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
-
 import ArrowRightIcon from "./components/SVG/ArrowRightIcon.astro";
 import ChartIcon from "./components/SVG/ChartIcon.astro";
 import ChipIcon from "./components/SVG/ChipIcon.astro";
@@ -12,6 +11,7 @@ import InstagramIcon from "./components/SVG/InstagramIcon.astro";
 import LinkedInIcon from "./components/SVG/LinkedInIcon.astro";
 import TikTokIcon from "./components/SVG/TikTokIcon.astro";
 import TwitterIcon from "./components/SVG/TwitterIcon.astro";
+import { twMerge } from "tailwind-merge";
 
 export const SITE_TITLE = "CR3ST Digital Agency";
 export const SITE_DESCRIPTION =
@@ -157,3 +157,5 @@ export type Service = {
   microcopy?: string;
   cta?: Projects["cta"];
 };
+
+export const tailwindMerge = twMerge;

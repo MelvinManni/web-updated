@@ -6,21 +6,22 @@ type Props = {
   title: string;
   description: string;
   icon: keyof typeof ICONS;
+  class?: string;
 };
 
-const { title, description, icon } = Astro.props;
+const { title, description, icon, class: className } = Astro.props;
 
 let Icon = ICONS[icon];
 ---
 
-<GradientCard>
+<GradientCard class={className}>
   <div class="mb-16">
     <Icon class={"w-12 dark:stroke-dark-50 stroke-dark-300"} />
   </div>
   <div class="mb-6">
     <h4 class="font-gotham text-dark-500 text-xl sm:text-2xl font-medium dark:text-light-400">{title}</h4>
   </div>
-  <p class=" max-sm:text-sm text-dark-300 dark:text-dark-50">
+  <p class="max-sm:text-sm text-dark-300 dark:text-dark-50">
     {description}
   </p>
 </GradientCard>

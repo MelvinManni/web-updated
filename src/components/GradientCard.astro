@@ -1,10 +1,12 @@
 ---
-type Props = {};
+import { type HTMLAttributes } from "astro/types";
+import { tailwindMerge } from "../consts";
 
-const {} = Astro.props;
+type Props = HTMLAttributes<"div">;
+const { class: className, ...rest } = Astro.props;
 ---
 
-<div class="group w-full relative rounded-lg transition duration-700">
+<div class={tailwindMerge("group w-full relative rounded-lg transition duration-700", className)} {...rest}>
   <div
     class="bg-card opacity-0 group-hover:opacity-60 w-full blur-[10px] absolute top-0 bottom-0 left-0 right-0 z-0 rounded-lg slow-transition"
   >

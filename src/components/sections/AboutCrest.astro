@@ -13,7 +13,7 @@ const { class: className }: Props = Astro.props;
 <section class={className}>
   <Container class="pb-32 pt-0 relative overflow-hidden">
     <div class="grid md:grid-cols-2 gap-10 md:gap-48 items-center relative z-10">
-      <div class="flex flex-col gap-8 pt-20">
+      <div class="flex flex-col gap-8 pt-20 gsap-slide-in-left">
         <h2 class="text-4xl sm:text-5xl font-bold clip-text bg-logo font-gotham">About CR3ST</h2>
         <p class="max-sm:text-sm dark:text-dark-50 text-dark-600 font-jarkata">
           At CR3ST, innovation is at the heart of everything we do. With a passion for excellence and a dedication to
@@ -24,7 +24,7 @@ const { class: className }: Props = Astro.props;
           <Button class="w-fit">Get Started! <ArrowRightIcon class="ml-2" /> </Button>
         </a>
       </div>
-      <div>
+      <div class="gsap-slide-in-right">
         <img src="/images/about-dark.webp" alt="Cr3st: About us" class="w-full hidden dark:block" />
         <img src="/images/about-light.webp" alt="Cr3st: About us" class="w-full dark:hidden" />
       </div>

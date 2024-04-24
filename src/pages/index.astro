@@ -20,14 +20,18 @@ import Count from "../components/Count.astro";
     <HeroBgDark class="absolute -top-[20%] h-full w-full hidden dark:block" />
     <Container class="relative z-10">
       <div class="flex flex-col items-center justify-center py-40">
-        <img src="/images/branding/icon.svg" alt="Logo" class="md:w-64 w-36" />
+        <div class="_animate-hero-icon">
+          <img src="/images/branding/icon.svg" alt="Logo" class="md:w-64 w-36" />
+        </div>
 
         <div class="text-center mt-20 font-gotham">
-          <h1 class="sm:text-8xl text-5xl font-bold text-primary dark:text-white">
+          <h1 class="sm:text-8xl text-5xl font-bold text-primary dark:text-white _animate-text-slide-up">
             Welcome to <br />
             <span class="bg-logo clip-text">CR3ST!</span>
           </h1>
-          <p class="text-xs sm:text-xl font-gotham mt-8 font-light dark:text-white text-dark-400">
+          <p
+            class="text-xs sm:text-xl font-gotham mt-8 font-light dark:text-white text-dark-400 _animate-text-slide-up"
+          >
             Transforming Ideas into Reality...
           </p>
         </div>
@@ -52,7 +56,9 @@ import Count from "../components/Count.astro";
   <section class={SECONDARY_BG}>
     <Container class="relative pt-24 pb-32 overflow-hidden">
       <Logo class="md:w-64 w-36 absolute opacity-10 -right-4 dark:fill-white fill-secondary" />
-      <h2 class="text-3xl sm:text-5xl font-gotham text-center text-dark-700 dark:text-light-200 relative z-10">
+      <h2
+        class="text-3xl sm:text-5xl font-gotham text-center text-dark-700 dark:text-light-200 relative z-10 _animate-text-slide-up"
+      >
         Custom Solutions, <br /> Tailored for You!
       </h2>
 
@@ -60,11 +66,13 @@ import Count from "../components/Count.astro";
         <div class="grid md:grid-cols-2 gap-8">
           <div class="flex flex-col gap-8">
             <SolutionsCard
+              class="gsap-fade-in"
               icon="chart"
               title="Software Development"
               description="From inception to deployment, our team crafts bespoke software solutions designed to streamline your processes and drive growth."
             />
             <SolutionsCard
+              class="gsap-fade-in"
               icon="cube"
               title="Digital Marketing Strategies that Deliver Results"
               description="Maximize your online visibility and engagement with our data-driven digital marketing solutions. From  SEO to social media management, we help you connect with your audience and achieve your business objectives."
@@ -72,11 +80,13 @@ import Count from "../components/Count.astro";
           </div>
           <div class="flex flex-col gap-8">
             <SolutionsCard
+              class="gsap-fade-in"
               icon="chip"
               title="Web Design & Development"
               description="Elevate your online presence with our stunning web designs and robust web applications. We blend creativity with functionality to deliver exceptional user experiences."
             />
             <SolutionsCard
+              class="gsap-fade-in"
               icon="emoji-happy"
               title="Expert Consulting Services"
               description="Gain valuable insights and strategic guidance from our experienced consultants. Whether you're launching a new project or seeking to optimize existing processes, we're here to support your success."
@@ -93,7 +103,7 @@ import Count from "../components/Count.astro";
     <Container class="relative pt-28 pb-32">
       <Logo class="md:w-72 w-36 absolute opacity-10 bottom-24 left-0 dark:fill-white fill-secondary" />
       <div class="grid md:grid-cols-2 gap-8 relative z-10">
-        <div>
+        <div class="gsap-bounce-in">
           <h1 class="text-3xl sm:text-5xl font-bold text-dark-700 font-gotham dark:text-light-200 mb-4">
             Unlock Your Potential with <span class="bg-logo clip-text">CR3ST</span>'s Innovative Solutions
           </h1>
@@ -104,7 +114,7 @@ import Count from "../components/Count.astro";
 
         <div class="flex max-md:flex-col gap-24">
           <div class="w-full h-1 md:h-full md:w-1 bg-border"></div>
-          <div class="flex flex-col gap-5">
+          <div class="flex flex-col gap-5 gsap-bounce-in">
             {
               POTENTIAL_LIST.map((item) => (
                 <div class="flex items-start gap-4">
@@ -128,11 +138,11 @@ import Count from "../components/Count.astro";
               Have a project in mind?
             </p>
             <div>
-              <h1 class="max-md:text-center text-4xl sm:text-6xl font-bold text-dark-700 dark:text-light-200">
+              <h1 class="max-md:text-center text-4xl sm:text-6xl font-bold text-dark-700 dark:text-light-200 gsap-fade-in">
                 Ready to Get Started?
                 <span class="bg-gradient-primary clip-text">Let's Talk!</span>
               </h1>
-              <p class="dark:text-dark-100 font-medium sm:text-lg text-dark-400 mt-6 max-md:text-center">
+              <p class="dark:text-dark-100 font-medium sm:text-lg text-dark-400 mt-6 max-md:text-center gsap-fade-in">
                 Whether you have a specific project in mind or need guidance on where to begin, our team is here to
                 help. Reach out to us today to discuss your goals and discover how CR3ST can empower your business for
                 success
@@ -140,7 +150,7 @@ import Count from "../components/Count.astro";
             </div>
           </div>
         </div>
-        <div class="card-gradient relative">
+        <div class="card-gradient relative gsap-slide-in-right">
           <div class="w-full relative h-full bg-light-50 dark:bg-black rounded-lg z-10 py-10 px-9">
             <p class="font-gotham font-medium text-xl dark:text-gray-200 text-dark-400">
               Let us know about your project & we will help you grow your business from scratch.
@@ -165,6 +175,8 @@ import Count from "../components/Count.astro";
     </Container>
   </section>
 </Layout>
+
+<script src="/src/animations/index.ts"></script>
 
 <style>
   .card-gradient::before {
