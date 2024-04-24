@@ -100,11 +100,11 @@ import Count from "../components/Count.astro";
   <AboutCrest />
 
   <section>
-    <Container class="relative pt-28 pb-32">
+    <Container class="relative pt-28 pb-32 overflow-clip">
       <Logo class="md:w-72 w-36 absolute opacity-10 bottom-24 left-0 dark:fill-white fill-secondary" />
       <div class="grid md:grid-cols-2 gap-8 relative z-10">
-        <div class="gsap-bounce-in">
-          <h1 class="text-3xl sm:text-5xl font-bold text-dark-700 font-gotham dark:text-light-200 mb-4">
+        <div >
+          <h1 class="text-3xl sm:text-5xl font-bold text-dark-700 font-gotham dark:text-light-200 mb-4 gsap-fade-in">
             Unlock Your Potential with <span class="bg-logo clip-text">CR3ST</span>'s Innovative Solutions
           </h1>
           <a href="#contact-us">
@@ -114,10 +114,10 @@ import Count from "../components/Count.astro";
 
         <div class="flex max-md:flex-col gap-24">
           <div class="w-full h-1 md:h-full md:w-1 bg-border"></div>
-          <div class="flex flex-col gap-5 gsap-bounce-in">
+          <div class="flex flex-col gap-5 ">
             {
               POTENTIAL_LIST.map((item) => (
-                <div class="flex items-start gap-4">
+                <div class="flex items-start gap-4 gsap-slide-in-right-delay">
                   <CheckIcon class="w-6 dark:stroke-gray-600 stroke-primary" />
                   <p class="dark:text-white text-dark-700 sm:text-lg">{item}</p>
                 </div>

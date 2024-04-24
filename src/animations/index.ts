@@ -5,7 +5,7 @@ window.onload = function () {
   gsap.registerPlugin(ScrollTrigger);
   const heroIcon = document.querySelector("._animate-hero-icon");
   const slideUpText = document.querySelectorAll("._animate-text-slide-up");
-  const bounceInItems = document.querySelectorAll(".gsap-bounce-in");
+  const slideInRightDelayed = document.querySelectorAll(".gsap-slide-in-right-delay");
   const slideInLeft = document.querySelectorAll(".gsap-slide-in-left");
   const slideInRight = document.querySelectorAll(".gsap-slide-in-right");
   const fadeIn = document.querySelectorAll(".gsap-fade-in");
@@ -76,45 +76,17 @@ window.onload = function () {
     })
   );
 
-
-  bounceInItems.forEach((item) => animateInBounce(item));
-
-  function animateInBounce(element: Element) {
-    gsap.set(element, { y: "100%", opacity: 0 }); // Initial position and opacity
-
-    // ScrollTrigger for triggering animation when element is visible
-    gsap.registerPlugin(ScrollTrigger);
-
-    ScrollTrigger.create({
-      trigger: element,
-      start: "top 80%",
-      once: true, // Adjust as needed
-      onEnter: () => {
-        gsap.to(element, {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          onComplete: () => {
-            // Bounce animation
-            gsap.to(element, {
-              y: "-=20px",
-              yoyo: true,
-              repeat: 2,
-              duration: 0.5,
-              ease: "power2.inOut",
-            });
-          },
-        });
+  slideInRightDelayed.forEach((item, index) =>
+    gsap.from(item, {
+      scrollTrigger: {
+        trigger: item,
       },
-      // onEnterBack: () => {
-      //   gsap.to(element, {
-      //     y: "100%",
-      //     opacity: 0,
-      //     duration: 1,
-      //     ease: "power3.in",
-      //   });
-      // },
-    });
-  }
+      x: 100,
+      opacity: 0,
+      duration: 1.5,
+      delay: 0.25 * index,
+      transition: "ease",
+      ease: "power.in",
+    })
+  );
 };
