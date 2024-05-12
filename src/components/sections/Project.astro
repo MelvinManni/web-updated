@@ -8,7 +8,7 @@ type Props = Projects & {
 
 const { title, description, cta, id, thumbnail }: Props = Astro.props;
 
-const Icon = cta.icon ? ICONS[cta.icon] : ICONS["arrow-right"];
+const Icon = cta?.icon ? ICONS[cta.icon] : ICONS["arrow-right"];
 ---
 
 <section id={id} class="dark:odd:bg-[#040404] odd:bg-[#F9FAFB] pt-32 pb-36 group">
@@ -27,10 +27,10 @@ const Icon = cta.icon ? ICONS[cta.icon] : ICONS["arrow-right"];
           {description}
         </p>
 
-        <a href={cta.link} target="_blank" class="mt-16 flex items-center text-secondary">
+        { cta && <a href={cta.link} target="_blank" class="mt-16 flex items-center text-secondary">
           {cta.text}
           <Icon class="w-4 h-4 ml-2 stroke-secondary" />
-        </a>
+        </a>}
       </div>
       <div class="flex-1">
         <img src={thumbnail} alt={`Cr3st digital agency project ${title} thumbnail`} class="w-full rounded" />
