@@ -33,6 +33,9 @@ const {
 
 const content = story.content;
 const renderedRichText = renderRichText(content.body);
+
+console.log(content.github);
+
 ---
 
 <Layout title={content.title} description={content.summary} cover={content.cover}>
@@ -44,15 +47,15 @@ const renderedRichText = renderRichText(content.body);
         <p class="text-lg font-bold">{content.author ?? "CR3ST Content Team"}</p>
         <div class="mt-2 flex gap-2 items-end">
           {
-            content.twitter && (
-              <a href={content.twitter}>
+            content.twitter?.url && (
+              <a href={content.twitter?.url}>
                 <TwitterIcon class="w-4" />
               </a>
             )
           }
           {
-            content.github && (
-              <a href={content.github}>
+            content.github?.url && (
+              <a href={content.github?.url}>
                 <GithubIcon class="w-4" />
               </a>
             )

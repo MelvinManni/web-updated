@@ -355,3 +355,17 @@ hr {
   height: 0;
   overflow: hidden;
 }
+
+.prose a {
+  color: #5b2ed8;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}

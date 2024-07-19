@@ -36,12 +36,7 @@ const { bg }: Props = Astro.props;
         <button aria-label="open mobile menu" id="btn-open-menu" class="md:hidden">
           <MenuIcon class="w-11 h-full dark:text-white text-dark-700" />
         </button>
-        <a
-          aria-label="employ cr3st services form"
-          href="http://tally.so/r/w48eBo"
-          target="_blank"
-          rel="noopener Cr3st Digital Agency"
-        >
+        <a aria-label="employ cr3st services form" href="http://tally.so/r/w48eBo" target="_blank" rel="noopener Cr3st Digital Agency">
           <Button class="hidden md:flex">Get Started! <ArrowRightIcon class="ml-2" /> </Button>
         </a>
       </div>
@@ -65,18 +60,22 @@ const { bg }: Props = Astro.props;
     window.addEventListener("scroll", () => {
       if (window.scrollY > header?.offsetHeight!) {
         header?.classList.remove("bg-transparent");
-        header?.classList.add("bg-page", "shadow-md");
+        header?.classList.add("shadow-md", "blur-bg");
       }
 
       if (window.scrollY < header?.offsetHeight!) {
-        header?.classList.remove("bg-page", "shadow-md");
-        // header?.classList.add("bg-transparent");
+        header?.classList.remove("shadow-md", "blur-bg");
+        header?.classList.add("bg-transparent");
       }
     });
 
     document.getElementById("header-spacing")?.style.setProperty("height", `${header?.offsetHeight}px`);
   </script>
   <style>
+    header.blur-bg {
+      backdrop-filter: blur(60px);
+      
+    }
     @media screen and (max-width: 768px) {
       header {
         z-index: 9999999;
