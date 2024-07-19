@@ -59,16 +59,23 @@ img {
 }
 code {
   padding: 2px 5px;
-  background-color: rgb(var(--gray-light));
   border-radius: 2px;
 }
 pre {
-  padding: 1.5em;
+  padding: 1em;
+  background-color: #b4b4c8;
   border-radius: 8px;
+  margin: 10px 0;
 }
+
+.dark pre {
+  background-color: #303036;
+}
+
 pre > code {
   all: unset;
 }
+
 blockquote {
   border-left: 4px solid var(--accent);
   padding: 0 0 0 20px;
@@ -195,4 +202,156 @@ hr {
 
 .fadein {
   animation: fadein 0.5s;
+}
+
+.prose > * {
+  margin-bottom: 0.75em;
+}
+
+.prose > h1 {
+  font-size: 2.5em;
+  margin-top: 0;
+}
+
+.prose > h2 {
+  font-size: 2em;
+}
+
+.prose > h3 {
+  font-size: 1.5em;
+}
+
+.prose > h4 {
+  font-size: 1.25em;
+}
+
+.prose > h5 {
+  font-size: 1em;
+}
+
+.prose > h6 {
+  font-size: 0.875em;
+}
+
+.prose > p {
+  font-size: 1em;
+}
+
+.prose > ul {
+  list-style-type: disc;
+  padding-left: 1em;
+}
+
+.prose > ol {
+  list-style-type: decimal;
+  padding-left: 1em;
+}
+
+.prose > ul > li {
+  margin-bottom: 0.5em;
+}
+
+.prose > ol > li {
+  margin-bottom: 0.5em;
+}
+
+.prose > blockquote {
+  margin: 0;
+  padding: 0.5em 1em;
+  border-left: 4px solid var(--accent);
+  background-color: var(--background);
+}
+
+.prose > pre {
+  margin: 0;
+  padding: 1em;
+  background-color: #b4b4c8;
+  border-radius: 8px;
+}
+
+.dark .prose > pre {
+  background-color: #303036;
+}
+
+.prose > pre > code {
+  all: unset;
+}
+
+.prose > a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.prose > a:hover {
+  text-decoration: none;
+}
+
+.prose > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.prose > table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prose > table th {
+  text-align: left;
+  padding: 0.5em;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.prose > table td {
+  padding: 0.5em;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.prose > table tr:nth-child(2n) {
+  background-color: var(--gray-light);
+}
+
+.prose > table tr:hover {
+  background-color: var(--gray-light);
+}
+
+.prose > code {
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+
+.prose > code::before {
+  content: "`";
+}
+
+.prose > code::after {
+  content: "`";
+}
+
+.prose > strong {
+  font-weight: 700;
+}
+
+.prose > b {
+  font-weight: 700;
+}
+
+.prose > em {
+  font-style: italic;
+}
+
+.prose > i {
+  font-style: italic;
+}
+
+.prose > hr {
+  border: none;
+  border-top: 1px solid rgb(var(--gray-light));
+}
+
+.prose > .youtube {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
 }
