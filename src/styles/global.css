@@ -237,25 +237,25 @@ hr {
   font-size: 1em;
 }
 
-.prose > ul {
+.prose ul {
   list-style-type: disc;
   padding-left: 1em;
 }
 
-.prose > ol {
+.prose ol {
   list-style-type: decimal;
   padding-left: 1em;
 }
 
-.prose > ul > li {
+.prose ul > li {
   margin-bottom: 0.5em;
 }
 
-.prose > ol > li {
+.prose ol > li {
   margin-bottom: 0.5em;
 }
 
-.prose > blockquote {
+.prose blockquote {
   margin: 0;
   padding: 0.5em 1em;
   border-left: 4px solid var(--accent);
@@ -277,79 +277,62 @@ hr {
   all: unset;
 }
 
-.prose > a {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-.prose > a:hover {
-  text-decoration: none;
-}
-
-.prose > img {
+.prose img {
   max-width: 100%;
   height: auto;
 }
 
-.prose > table {
+.prose table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.prose > table th {
+.prose table th {
   text-align: left;
   padding: 0.5em;
   border-bottom: 1px solid var(--gray-light);
 }
 
-.prose > table td {
+.prose table td {
   padding: 0.5em;
   border-bottom: 1px solid var(--gray-light);
 }
 
-.prose > table tr:nth-child(2n) {
+.prose table tr:nth-child(2n) {
   background-color: var(--gray-light);
 }
 
-.prose > table tr:hover {
+.prose table tr:hover {
   background-color: var(--gray-light);
 }
 
-.prose > code {
+.prose code {
   padding: 2px 5px;
   border-radius: 2px;
 }
 
-.prose > code::before {
-  content: "`";
-}
-
-.prose > code::after {
-  content: "`";
-}
-
-.prose > strong {
+.prose strong {
   font-weight: 700;
 }
 
-.prose > b {
+.prose b {
   font-weight: 700;
 }
 
-.prose > em {
+.prose em {
   font-style: italic;
 }
 
-.prose > i {
+.prose i {
   font-style: italic;
 }
 
-.prose > hr {
+.prose hr {
   border: none;
   border-top: 1px solid rgb(var(--gray-light));
 }
 
-.prose > .youtube {
+.prose .youtube {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
