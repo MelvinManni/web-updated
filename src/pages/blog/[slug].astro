@@ -76,5 +76,35 @@ const renderedRichText = renderRichText(content.body);
     <div class="max-sm:text-sm dark:text-dark-100 text-dark-400 flex flex-col gap-2 mt-10">
       <div class="prose" set:html={renderedRichText} />
     </div>
+
+    <video id="player" controls autoplay loop class="w-full mt-10 rounded-lg">
+      <source src="https://res.cloudinary.com/melvin-manni/video/upload/v1723545310/dhuuflqdwar5n3sxma1b.mp4" type="video/mp4" />
+    </video>
   </Container>
 </Layout>
+
+<script>
+  var video = document.getElementById("player") as HTMLVideoElement;
+  video.volume = 0.1;
+
+  // Play video when it is in view 
+
+  var options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  };
+
+  var observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }, options);
+
+  observer.observe(video);
+
+</script>
