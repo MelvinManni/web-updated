@@ -17,7 +17,7 @@ import Layout from "../layouts/index.astro";
                 <div class="flex overflow-x-scroll justify-center mt-16 no-scrollbar max-md:hidden">
                   {
                     PROJECTS.slice(0, 5).map((project, index) => (
-                      <a href={`#PROJECTS_${project.title}_${index}`} class="flex-[1.2] even:flex-1">
+                      <a href={`#PROJECTS_${project.title}_${index}`} class={ (index + 1)  % 2 === 0 ? 'w-[23%]' : 'w-[18%]'}>
                         <img
                           src={project.thumbnail}
                           alt={`Cr3st digital agency project ${project.title} thumbnail`}
