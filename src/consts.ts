@@ -85,6 +85,16 @@ export const PROJECTS: Projects[] = [
        link: "https://www.afriheritageawards.com/",
      },
   },
+  {
+    title: "Swiftlink Global",
+    thumbnail: "/images/projects/2.webp",
+    description:
+      "Cr3st Digital Agency designed and developed the SwiftLink website to reflect the company's business values and vision. Through thoughtful design, We created a user-friendly platform that effectively communicates SwiftLink's innovative approach to financial solutions, ensuring a seamless user experience aligned with their brand identity.",
+     cta: {
+       text: "View Project",
+       link: "http://swiftlink.ng/",
+     },
+  },
 ];
 
 export const SERVICES: Service[] = [
