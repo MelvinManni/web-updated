@@ -82,7 +82,7 @@ export const PROJECTS: Projects[] = [
       "Discover CR3ST's impactful landing page for the AfriHeritage Awards. Celebrating African innovators and entrepreneurs, our design captures the essence of driving Africa towards greatness.",
      cta: {
        text: "View Project",
-       link: "https://www.afriheritageawards.com/",
+       link: "https://afriheritageawards.com/",
      },
   },
   {
