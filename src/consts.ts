@@ -80,10 +80,10 @@ export const PROJECTS: Projects[] = [
     thumbnail: "/images/projects/1.webp",
     description:
       "Discover CR3ST's impactful landing page for the AfriHeritage Awards. Celebrating African innovators and entrepreneurs, our design captures the essence of driving Africa towards greatness.",
-     cta: {
-       text: "View Project",
-       link: "https://afriheritageawards.com/",
-     },
+    //  cta: {
+    //    text: "View Project",
+    //    link: "https://afriheritageawards.com/",
+    //  },
   },
   {
     title: "Swiftlink Global",
