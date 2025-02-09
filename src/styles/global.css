@@ -352,3 +352,7 @@ hr {
   font-weight: 700;
   line-height: 1.2;
 }
+
+.prose img {
+  margin-bottom: 10px
+}
